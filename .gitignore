@@ -1,0 +1,23 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Raw collected data (large; small samples are committed separately)
+data/raw/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node / Next.js (MVP)
+node_modules/
+.next/
+out/
+
+# OS / editor noise
+Thumbs.db
+.DS_Store
+*.log
