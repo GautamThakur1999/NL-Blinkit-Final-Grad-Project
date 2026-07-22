@@ -2,6 +2,25 @@
 
 > Condensed working context for this project. Full details in `PROBLEM_STATEMENT.md`.
 
+## ▶ Start Here (for any new agent / environment, e.g. Antigravity)
+
+1. **Read these first, in order:** `context.md` (this file) → `ARCHITECTURE.md` →
+   `edge.md` → `IMPLEMENTATION_PLAN.md`. They contain the full plan; nothing critical
+   lives only in chat history.
+2. **Then begin at the first unchecked item** in the Status checklist at the bottom of
+   this file, following `IMPLEMENTATION_PLAN.md` phase by phase (currently: Phase 0).
+3. **On a fresh clone, set the neutral git identity BEFORE committing** (a new clone
+   uses your global git config, which may carry personal details — see Anonymity
+   directive):
+   ```
+   git config user.name "blinkit-growth-pm"
+   git config user.email "blinkit-growth-pm@users.noreply.github.com"
+   ```
+4. **API keys needed for the pipeline** (set as environment variables, never commit):
+   `GEMINI_API_KEY` (Google AI Studio) and `GROQ_API_KEY` (Groq console).
+5. **Honor every Working Directive below** — anonymity, free-tools-only stack, and the
+   cross-category-barrier focus are non-negotiable.
+
 ## Who / What
 
 - **Project:** Final grad project — acting as a **Product Manager, Growth Team at Blinkit**.
