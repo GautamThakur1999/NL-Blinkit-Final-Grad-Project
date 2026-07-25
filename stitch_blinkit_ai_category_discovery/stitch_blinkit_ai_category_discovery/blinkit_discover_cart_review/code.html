@@ -1,0 +1,293 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Cart &amp; Review - Blinkit Discover</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffe08f",
+                        "primary": "#755b00",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-secondary-container": "#007518",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#8ffb87",
+                        "primary-fixed-dim": "#edc13d",
+                        "secondary-fixed": "#8ffb87",
+                        "primary-container": "#f8cb46",
+                        "outline": "#7f7662",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container": "#f0eded",
+                        "secondary": "#006e16",
+                        "surface": "#fcf9f8",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-high": "#eae7e7",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-primary-fixed": "#241a00",
+                        "tertiary-container": "#d0d0d0",
+                        "surface-dim": "#dcd9d9",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#edc13d",
+                        "on-surface": "#1b1b1c",
+                        "error-container": "#ffdad6",
+                        "background": "#fcf9f8",
+                        "surface-tint": "#755b00",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#575959",
+                        "secondary-fixed-dim": "#74dd6e",
+                        "outline-variant": "#d1c5ae",
+                        "on-primary-container": "#6e5600",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-primary-fixed-variant": "#584400",
+                        "on-background": "#1b1b1c",
+                        "surface-bright": "#fcf9f8",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#00530e",
+                        "on-secondary-fixed": "#002203",
+                        "tertiary": "#5d5f5f",
+                        "inverse-surface": "#303030",
+                        "surface-container-low": "#f6f3f2",
+                        "on-surface-variant": "#4e4634"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "gutter": "20px",
+                        "xs": "8px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "sm": "12px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "26px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    },
+                    "boxShadow": {
+                        'soft': '0 4px 12px rgba(0,0,0,0.05)',
+                        'lifted': '0 8px 24px rgba(0,0,0,0.08)'
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased pt-[104px]">
+<!-- TopNavBar (Shared Component) + Progress Indicator -->
+<header class="fixed top-0 w-full z-50 bg-surface shadow-sm flex flex-col">
+<!-- Main Nav Bar from JSON -->
+<div class="flex justify-between items-center px-gutter py-md max-w-container-max mx-auto w-full">
+<div class="flex items-center gap-sm">
+<button aria-label="Go back" class="text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-full p-2">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Blinkit Discover</h1>
+</div>
+<div class="flex items-center gap-sm hidden">
+<!-- Search bar hidden per JSON -->
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-full p-2 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Progress Indicator -->
+<div class="bg-surface-container-lowest border-t border-surface-variant w-full">
+<div class="max-w-container-max mx-auto px-gutter py-sm flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface-variant">Step 1 of 2: Review</span>
+<div class="flex gap-2 w-32 h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="w-1/2 h-full bg-secondary rounded-full"></div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Layout (2-Column Grid) -->
+<main class="max-w-container-max mx-auto px-gutter py-2xl grid grid-cols-1 lg:grid-cols-12 gap-xl">
+<!-- Left Column: Your Cart -->
+<section class="lg:col-span-8 flex flex-col gap-lg">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Your Cart</h2>
+<!-- Cart Item Card 1 -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-soft p-lg flex flex-col sm:flex-row gap-lg items-start border border-surface-container-high transition-shadow hover:shadow-lifted relative overflow-hidden">
+<!-- Subtle Discovery Glow -->
+<div class="absolute inset-0 bg-primary-container opacity-5 pointer-events-none"></div>
+<div class="w-full sm:w-[120px] h-[120px] rounded-lg overflow-hidden shrink-0 bg-surface flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A high-quality studio shot of a premium bag of beef dog treats resting on a pristine white marble countertop. The packaging is modern and elegant, featuring rich earthy tones and subtle metallic accents. The lighting is soft and natural, casting delicate shadows that highlight the texture of the product. The overall mood is upscale, clean, and nutritious, perfectly fitting a high-end pet care brand aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbiQ_1MPwKWmeBvPn6Wi-vndCjtQhUDIJ_UxUI1kr-21rVn3LOWRb2HZT1nTai3GwyZZbEmhlaDeVateGwoq7K-uHP3Pc7RHtyPlFoLYIKXZ_7izgBUVIl8tKgsZ8uhdLh-7z4N3KwVB0_TG7dEOhxNTjD8W-A3P4n-hjMSkhQ-w3unwRnJThx8Nj-os7P7UKSxKlrgendDFUqhqKkK6apHKIRkhEZ9lPzMPz9bGChM1siePkmgueUzrnYJfGhdCPlU8JZpZpot4o">
+</div>
+<div class="flex-1 flex flex-col gap-sm">
+<!-- AI Discovery Chip / Tag -->
+<div class="inline-flex items-center gap-1 bg-primary-fixed text-on-primary-fixed-variant px-sm py-1 rounded-full w-fit">
+<span class="material-symbols-outlined text-[14px]">local_fire_department</span>
+<span class="font-label-md text-label-md">First-time category discount</span>
+</div>
+<div class="flex justify-between items-start gap-md">
+<div>
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface">Premium Beef Dog Treats</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">250g • Rich in Protein</p>
+</div>
+<div class="text-right">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹240</span>
+<div class="flex items-center justify-end gap-1 text-secondary mt-1">
+<span class="material-symbols-outlined text-[14px]">arrow_downward</span>
+<span class="font-label-md text-label-md">₹60 Off</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant line-through block mt-1">₹300</span>
+</div>
+</div>
+<div class="flex justify-between items-center mt-2">
+<div class="flex items-center gap-md border border-surface-variant rounded-lg p-1 bg-surface-container-lowest">
+<button class="w-8 h-8 flex items-center justify-center rounded text-secondary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<span class="font-label-lg text-label-lg w-4 text-center">1</span>
+<button class="w-8 h-8 flex items-center justify-center rounded text-secondary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<button class="text-error hover:bg-error-container p-2 rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined">delete_outline</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Cart Item Card 2 -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-soft p-lg flex flex-col sm:flex-row gap-lg items-start border border-surface-container-high transition-shadow hover:shadow-lifted relative overflow-hidden">
+<!-- Subtle Discovery Glow -->
+<div class="absolute inset-0 bg-primary-container opacity-5 pointer-events-none"></div>
+<div class="w-full sm:w-[120px] h-[120px] rounded-lg overflow-hidden shrink-0 bg-surface flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A bright, minimalist photograph of an interactive smart dog toy placed on a light oak wooden floor. The toy has a sleek, modern design with soft pastel colors, standing out against the clean background. Sunlight streams in from a nearby window, creating long, soft shadows and a warm, inviting atmosphere. The image feels high-tech yet approachable, emphasizing the innovative nature of pet accessories." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEet0mvor-kHdBzDSSkL-P9WujbFhtCH0NMTugwo697GmJWVK1shymBEZmr4YEhvySMOJtJwNYHlL9rIfBxydAbb01yAfEEjyMgAOZe3hbRyr_iW6OvZiZMdK28aEybHvRJ8CH8odQblKaxP5fM0GYjRI7EYxcpvK9ak9eOXQlQYU1aknD-EveKser04sSAXmFlSt6HAKKwUdm40N27W2dR3_k6PF1lxCQnDI5Hu2DuqsCWu8KFQFtP7PvzisoeC-t9OiMOcnfdkM">
+</div>
+<div class="flex-1 flex flex-col gap-sm">
+<!-- AI Discovery Chip / Tag -->
+<div class="inline-flex items-center gap-1 bg-primary-container text-on-primary-container px-sm py-1 rounded-full w-fit opacity-80">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+<span class="font-label-md text-label-md">Suggested for you</span>
+</div>
+<div class="flex justify-between items-start gap-md">
+<div>
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface">Interactive Smart Bone</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">App Controlled • Durable</p>
+</div>
+<div class="text-right">
+<span class="font-body-lg text-body-lg font-bold text-on-surface">₹899</span>
+</div>
+</div>
+<div class="flex justify-between items-center mt-2">
+<div class="flex items-center gap-md border border-surface-variant rounded-lg p-1 bg-surface-container-lowest">
+<button class="w-8 h-8 flex items-center justify-center rounded text-secondary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<span class="font-label-lg text-label-lg w-4 text-center">1</span>
+<button class="w-8 h-8 flex items-center justify-center rounded text-secondary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<button class="text-error hover:bg-error-container p-2 rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined">delete_outline</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Add More Items CTA -->
+<button class="w-full py-md border-2 border-dashed border-outline-variant text-on-surface-variant rounded-xl font-label-lg text-label-lg flex items-center justify-center gap-2 hover:bg-surface-container-low transition-colors hover:text-primary">
+<span class="material-symbols-outlined">add_circle</span>
+                Explore more Pet Care
+            </button>
+</section>
+<!-- Right Column: Order Summary (Sticky) -->
+<aside class="lg:col-span-4">
+<div class="sticky top-[120px] bg-surface-container-lowest rounded-2xl shadow-soft p-lg border border-surface-container-high flex flex-col gap-lg">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Order Summary</h2>
+<div class="flex flex-col gap-sm">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Subtotal (2 items)</span>
+<span class="font-body-md text-body-md text-on-surface">₹1199</span>
+</div>
+<div class="flex justify-between items-center text-secondary">
+<span class="font-body-md text-body-md">Category Discount</span>
+<span class="font-body-md text-body-md font-bold">-₹60</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
+                            Delivery Fee
+                            <span class="material-symbols-outlined text-[16px] text-primary" title="Free for discovery orders">info</span>
+</span>
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md line-through text-on-surface-variant">₹45</span>
+<span class="font-body-md text-body-md text-secondary font-bold">₹0</span>
+</div>
+</div>
+</div>
+<hr class="border-surface-variant">
+<div class="flex justify-between items-center">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Total</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹1139</span>
+</div>
+<!-- Savings Banner -->
+<div class="bg-secondary-container text-on-secondary-container rounded-lg p-sm flex items-center gap-sm"><span class="material-symbols-outlined text-[16px] animate-pulse">auto_awesome</span>
+<span class="material-symbols-outlined">savings</span>
+<span class="font-label-md text-label-md">You are saving ₹105 on this order!</span>
+</div>
+<!-- Primary Action Button -->
+<button class="bg-secondary text-on-secondary w-full py-md rounded-xl font-label-lg text-label-lg font-bold shadow-sm hover:shadow-md hover:bg-[#005a12] transition-all flex items-center justify-center gap-2 mt-2 active:scale-95"><span class="material-symbols-outlined text-[20px]">lock</span> Proceed to Payment <span class="material-symbols-outlined text-[20px]">arrow_forward</span></button>
+<p class="font-body-sm text-body-sm text-center text-on-surface-variant mt-2 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+                    Secure checkout
+                </p>
+</div>
+</aside>
+</main>
+<!-- Bottom Nav Bar purposefully suppressed for this transactional flow as per guidelines -->
+
+
+</body></html>

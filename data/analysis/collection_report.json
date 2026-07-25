@@ -1,0 +1,18 @@
+{
+  "total_records": 10000,
+  "date_range": {
+    "earliest": "2026-07-16T07:53:50+00:00",
+    "latest": "2026-07-23T09:27:01+00:00"
+  },
+  "by_source": {
+    "app_store": 50,
+    "play_store": 9950
+  },
+  "by_era": {
+    "blinkit": 10000
+  },
+  "by_script": {
+    "devanagari": 42,
+    "latin_only": 9958
+  }
+}

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Successful - Blinkit Discover</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#8ffb87",
+                        "on-secondary-container": "#007518",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-surface-variant": "#4e4634",
+                        "primary-fixed-dim": "#edc13d",
+                        "on-primary-container": "#6e5600",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#241a00",
+                        "secondary-fixed": "#8ffb87",
+                        "inverse-primary": "#edc13d",
+                        "inverse-on-surface": "#f3f0ef",
+                        "secondary-fixed-dim": "#74dd6e",
+                        "on-background": "#1b1b1c",
+                        "surface-container-highest": "#e5e2e1",
+                        "outline": "#7f7662",
+                        "tertiary": "#5d5f5f",
+                        "tertiary-container": "#d0d0d0",
+                        "surface": "#fcf9f8",
+                        "on-tertiary-container": "#575959",
+                        "outline-variant": "#d1c5ae",
+                        "surface-container-high": "#eae7e7",
+                        "tertiary-fixed": "#e2e2e2",
+                        "background": "#fcf9f8",
+                        "on-surface": "#1b1b1c",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "primary-container": "#f8cb46",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#ffe08f",
+                        "surface-bright": "#fcf9f8",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e5e2e1",
+                        "surface-tint": "#755b00",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#755b00",
+                        "surface-container-low": "#f6f3f2",
+                        "secondary": "#006e16",
+                        "on-primary-fixed-variant": "#584400",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#00530e",
+                        "surface-dim": "#dcd9d9",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#303030",
+                        "on-secondary-fixed": "#002203"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "md": "16px",
+                        "2xl": "48px",
+                        "gutter": "20px",
+                        "sm": "12px",
+                        "xs": "8px",
+                        "base": "4px",
+                        "xl": "32px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter", "sans-serif"],
+                        "display-lg": ["Inter", "sans-serif"],
+                        "headline-sm": ["Inter", "sans-serif"],
+                        "headline-md": ["Inter", "sans-serif"],
+                        "headline-lg-mobile": ["Inter", "sans-serif"],
+                        "headline-lg": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "label-lg": ["Inter", "sans-serif"],
+                        "body-sm": ["Inter", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "26px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill { font-variation-settings: 'FILL' 1; }
+        
+        /* Custom animations for success screen */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        
+        @keyframes scale-in {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-scale-in { animation: scale-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+        
+        @keyframes slide-up {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        .animate-slide-up { animation: slide-up 0.5s ease-out forwards; }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopNavBar (Transactional/Linear flow, but requested in prompt, so rendering simplified version without nav links) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-lg py-sm max-w-container-max mx-auto shadow-sm bg-surface dark:bg-surface-dim">
+<div class="text-headline-lg font-headline-lg font-black text-primary dark:text-primary-fixed">
+            Blinkit Discover
+        </div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary dark:text-secondary-fixed hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors duration-200 p-2 rounded-full cursor-pointer">
+                location_on
+            </span>
+<span class="material-symbols-outlined text-secondary dark:text-secondary-fixed hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors duration-200 p-2 rounded-full cursor-pointer">
+                shopping_cart
+            </span>
+<span class="material-symbols-outlined text-secondary dark:text-secondary-fixed hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors duration-200 p-2 rounded-full cursor-pointer">
+                person
+            </span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 pb-2xl px-gutter max-w-3xl mx-auto w-full flex flex-col items-center justify-center">
+<!-- Celebratory Graphic -->
+<div class="w-full flex justify-center mb-lg opacity-0 animate-scale-in">
+<div class="relative w-48 h-48 animate-float">
+<!-- Using a stylized SVG instead of animation tag for predictable rendering -->
+<svg class="w-full h-full text-secondary" fill="none" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<circle cx="100" cy="100" fill="currentColor" fill-opacity="0.1" r="80"></circle>
+<circle cx="100" cy="100" fill="currentColor" fill-opacity="0.2" r="60"></circle>
+<path d="M100 135L65 95L80 80L100 105L145 55L160 70L100 135Z" fill="currentColor"></path>
+<!-- Confetti -->
+<circle cx="40" cy="40" fill="#f8cb46" r="5"></circle>
+<rect fill="#ba1a1a" height="8" transform="rotate(45 150 30)" width="8" x="150" y="30"></rect>
+<circle cx="160" cy="150" fill="#0c831f" r="4"></circle>
+<rect fill="#edc13d" height="12" transform="rotate(-30 30 140)" width="6" x="30" y="140"></rect>
+</svg>
+</div>
+</div>
+<!-- Success Heading -->
+<div class="text-center mb-xl opacity-0 animate-slide-up delay-100">
+<h1 class="font-headline-lg text-headline-lg text-[#0C831F] mb-xs">Order Placed Successfully!</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Your order is on its way. Sit back and relax.</p>
+</div>
+<!-- Discovery Badge Card (Glassmorphism/AI Glow) -->
+<div class="w-full bg-surface-container-lowest border border-primary-container/30 rounded-[16px] p-lg mb-xl shadow-[0px_8px_24px_rgba(248,203,70,0.15)] relative overflow-hidden opacity-0 animate-slide-up delay-200">
+<!-- AI Glow background -->
+<div class="absolute inset-0 bg-primary-container opacity-5 pointer-events-none"></div>
+<div class="flex items-center gap-md relative z-10">
+<div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center flex-shrink-0 text-primary-container">
+<span class="material-symbols-outlined text-4xl icon-fill" style="color: #f8cb46;">workspace_premium</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-1">Category Explorer Unlocked!</h2>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
+<span class="inline-flex items-center justify-center px-2 py-0.5 rounded-full bg-primary-container/20 text-on-primary-container font-label-md text-label-md">Pet Care Explorer</span>
+                        You tried something new today.
+                    </p>
+</div>
+</div>
+</div>
+<!-- Order Details Bento Grid -->
+<div class="w-full grid grid-cols-1 md:grid-cols-2 gap-md mb-xl opacity-0 animate-slide-up delay-300">
+<!-- Delivery Info -->
+<div class="bg-surface-container-lowest rounded-[16px] p-lg shadow-[0px_4px_12px_rgba(0,0,0,0.05)] flex flex-col justify-between h-full">
+<div class="mb-md">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Delivery Time</span>
+<span class="material-symbols-outlined text-secondary">timer</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Arriving in 15 mins</p>
+</div>
+<div class="pt-md border-t border-surface-variant">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">home</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Delivery To</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface truncate">Home - 42, Silicon Valley Road, Block B...</p>
+</div>
+</div>
+<!-- Order Summary & Savings -->
+<div class="bg-surface-container-lowest rounded-[16px] p-lg shadow-[0px_4px_12px_rgba(0,0,0,0.05)] flex flex-col justify-between h-full">
+<div class="mb-md">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Order ID</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">#BLK-9824-771</p>
+</div>
+<div class="pt-md border-t border-surface-variant bg-secondary-container/10 -mx-lg -mb-lg px-lg pb-lg rounded-b-[16px]">
+<div class="flex items-center justify-between mt-2">
+<span class="font-label-lg text-label-lg text-on-secondary-container flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+                            Discovery Savings
+                        </span>
+<span class="font-headline-sm text-headline-sm text-on-secondary-container">-$5.00</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-secondary-container/80 mt-1">First-time category discount applied.</p>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="w-full flex flex-col sm:flex-row gap-md opacity-0 animate-slide-up delay-300" style="animation-delay: 400ms;">
+<button class="flex-1 bg-[#0C831F] hover:bg-secondary text-white font-label-lg text-label-lg py-4 px-6 rounded-[8px] transition-colors duration-200 shadow-[0px_4px_12px_rgba(12,131,31,0.2)] flex items-center justify-center gap-2">
+                Track Order
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="flex-1 bg-transparent border-2 border-on-surface text-on-surface font-label-lg text-label-lg py-4 px-6 rounded-[8px] hover:bg-surface-variant transition-colors duration-200 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">explore</span>
+                Back to Discoveries
+            </button>
+</div>
+</main>
+</body></html>

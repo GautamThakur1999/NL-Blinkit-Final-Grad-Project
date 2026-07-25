@@ -1,0 +1,65 @@
+[
+  {
+    "id": "item_101",
+    "name": "Sony WH-1000XM5 Wireless Headphones",
+    "category": "Electronics",
+    "price_inr": 29990,
+    "tags": ["audio", "premium", "gift", "travel", "noise-cancelling"]
+  },
+  {
+    "id": "item_102",
+    "name": "Apple 20W USB-C Power Adapter",
+    "category": "Electronics",
+    "price_inr": 1900,
+    "tags": ["charger", "urgent", "phone", "accessory"]
+  },
+  {
+    "id": "item_201",
+    "name": "L'Oreal Paris Revitalift Hyaluronic Acid Serum",
+    "category": "Beauty & Personal Care",
+    "price_inr": 999,
+    "tags": ["skincare", "premium", "routine", "face"]
+  },
+  {
+    "id": "item_202",
+    "name": "Gillette Mach3 Turbo Razor",
+    "category": "Beauty & Personal Care",
+    "price_inr": 350,
+    "tags": ["grooming", "shaving", "routine", "men"]
+  },
+  {
+    "id": "item_301",
+    "name": "Pedigree Adult Dry Dog Food (Meat & Rice) 3kg",
+    "category": "Pet Care",
+    "price_inr": 700,
+    "tags": ["dog", "food", "routine", "pet"]
+  },
+  {
+    "id": "item_401",
+    "name": "UNO Card Game",
+    "category": "Toys & Games",
+    "price_inr": 149,
+    "tags": ["party", "game", "weekend", "kids", "friends"]
+  },
+  {
+    "id": "item_402",
+    "name": "Hot Wheels Diecast Car (Assorted)",
+    "category": "Toys & Games",
+    "price_inr": 179,
+    "tags": ["kids", "toy", "gift"]
+  },
+  {
+    "id": "item_501",
+    "name": "Duracell Ultra AA Alkaline Batteries (Pack of 4)",
+    "category": "Electronics",
+    "price_inr": 170,
+    "tags": ["urgent", "utility", "power", "household"]
+  },
+  {
+    "id": "item_601",
+    "name": "Durex Mutual Climax Condoms (Pack of 10)",
+    "category": "Pharmacy",
+    "price_inr": 350,
+    "tags": ["intimate", "night", "weekend", "urgent"]
+  }
+]

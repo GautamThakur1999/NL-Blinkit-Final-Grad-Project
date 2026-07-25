@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment &amp; Delivery - Blinkit Discover</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffe08f",
+                        "primary": "#755b00",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-secondary-container": "#007518",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#8ffb87",
+                        "primary-fixed-dim": "#edc13d",
+                        "secondary-fixed": "#8ffb87",
+                        "primary-container": "#f8cb46",
+                        "outline": "#7f7662",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container": "#f0eded",
+                        "secondary": "#006e16",
+                        "surface": "#fcf9f8",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-high": "#eae7e7",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-primary-fixed": "#241a00",
+                        "tertiary-container": "#d0d0d0",
+                        "surface-dim": "#dcd9d9",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#edc13d",
+                        "on-surface": "#1b1b1c",
+                        "error-container": "#ffdad6",
+                        "background": "#fcf9f8",
+                        "surface-tint": "#755b00",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#575959",
+                        "secondary-fixed-dim": "#74dd6e",
+                        "outline-variant": "#d1c5ae",
+                        "on-primary-container": "#6e5600",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-primary-fixed-variant": "#584400",
+                        "on-background": "#1b1b1c",
+                        "surface-bright": "#fcf9f8",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#00530e",
+                        "on-secondary-fixed": "#002203",
+                        "tertiary": "#5d5f5f",
+                        "inverse-surface": "#303030",
+                        "surface-container-low": "#f6f3f2",
+                        "on-surface-variant": "#4e4634"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "gutter": "20px",
+                        "xs": "8px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "sm": "12px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "26px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pt-[88px] pb-lg">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-surface-dim text-primary dark:text-primary-fixed-dim font-headline-md text-headline-md fixed top-0 w-full z-50 shadow-sm dark:shadow-none h-[88px]">
+<div class="flex justify-between items-center px-gutter py-md max-w-container-max mx-auto h-full">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-[32px] font-bold" data-icon="bolt">bolt</span>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim tracking-tight">Blinkit Discover</span>
+</div>
+<div class="hidden md:flex items-center gap-xs bg-surface-container-low px-md py-xs rounded-full border border-surface-variant">
+<span class="font-label-md text-label-md text-on-surface-variant">Step 1</span>
+<span class="w-8 h-[2px] bg-outline-variant"></span>
+<span class="font-label-md text-label-md text-primary font-bold">Step 2: Payment</span>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-xs text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-full flex items-center justify-center active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="max-w-container-max mx-auto px-gutter md:px-lg grid grid-cols-1 lg:grid-cols-12 gap-lg lg:gap-xl">
+<!-- Left Column: Delivery & Payment -->
+<div class="lg:col-span-8 flex flex-col gap-lg">
+<!-- Delivery Address Card -->
+<section class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-surface-variant overflow-hidden">
+<div class="p-md md:p-lg border-b border-surface-variant bg-surface-bright flex justify-between items-center">
+<h2 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-outline" data-icon="location_on">location_on</span>
+                        Delivery Address
+                    </h2>
+<button class="font-label-lg text-label-lg text-primary hover:text-primary-fixed-dim transition-colors bg-transparent border border-outline-variant hover:border-primary px-sm py-xs rounded-lg active:scale-95">Edit</button>
+</div>
+<div class="p-md md:p-lg flex gap-md items-start hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="mt-1 w-5 h-5 rounded-full border-2 border-primary flex items-center justify-center">
+<div class="w-2.5 h-2.5 bg-primary rounded-full"></div>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-xs mb-xs">
+<span class="font-label-lg text-label-lg text-on-surface">Home</span>
+<span class="bg-surface-variant text-on-surface-variant font-label-md text-label-md px-2 py-0.5 rounded text-[10px]">Default</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Flat 402, Block B, Sunshine Apartments,<br/>
+                            Outer Ring Road, Bellandur, Bengaluru - 560103
+                        </p>
+<p class="font-body-sm text-body-sm text-outline mt-xs">Phone: +91 98765 43210</p>
+</div>
+</div>
+</section>
+<!-- Payment Method Card -->
+<section class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-surface-variant overflow-hidden">
+<div class="p-md md:p-lg border-b border-surface-variant bg-surface-bright">
+<h2 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-xs">
+<span class="material-symbols-outlined text-outline" data-icon="account_balance_wallet">account_balance_wallet</span>
+                        Payment Method
+                    </h2>
+</div>
+<div class="flex flex-col">
+<!-- UPI Option (Recommended) -->
+<label class="p-md md:p-lg border-b border-surface-variant flex gap-md items-start cursor-pointer hover:bg-primary-fixed/10 transition-colors bg-primary-fixed/5 group">
+<div class="mt-1">
+<input checked="" class="w-5 h-5 text-primary border-outline focus:ring-primary focus:ring-offset-surface-container-lowest bg-surface-container-lowest" name="payment" type="radio"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-xs">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">UPI</span>
+<span class="bg-primary-container text-on-primary-container font-label-md text-label-md px-2 py-0.5 rounded-full flex items-center gap-[2px]">
+<span class="material-symbols-outlined text-[14px]" data-icon="bolt">bolt</span>
+                                    Recommended
+                                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md">Pay instantly via Google Pay, PhonePe, Paytm</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-sm">
+<div class="border border-outline-variant rounded-lg p-sm flex flex-col items-center justify-center gap-xs bg-surface-container-lowest hover:border-primary hover:shadow-sm transition-all cursor-pointer">
+<span class="font-label-md text-label-md text-on-surface">GPay</span>
+</div>
+<div class="border border-outline-variant rounded-lg p-sm flex flex-col items-center justify-center gap-xs bg-surface-container-lowest hover:border-primary hover:shadow-sm transition-all cursor-pointer">
+<span class="font-label-md text-label-md text-on-surface">PhonePe</span>
+</div>
+<div class="border border-outline-variant rounded-lg p-sm flex flex-col items-center justify-center gap-xs bg-surface-container-lowest hover:border-primary hover:shadow-sm transition-all cursor-pointer">
+<span class="font-label-md text-label-md text-on-surface">Paytm</span>
+</div>
+<div class="border border-outline-variant rounded-lg p-sm flex flex-col items-center justify-center gap-xs bg-surface-container-lowest hover:border-primary hover:shadow-sm transition-all cursor-pointer">
+<span class="font-label-md text-label-md text-on-surface">Add ID</span>
+</div>
+</div>
+</div>
+</label>
+<!-- Card Option -->
+<label class="p-md md:p-lg border-b border-surface-variant flex gap-md items-center cursor-pointer hover:bg-surface-container-low transition-colors group">
+<div>
+<input class="w-5 h-5 text-primary border-outline focus:ring-primary focus:ring-offset-surface-container-lowest bg-surface-container-lowest" name="payment" type="radio"/>
+</div>
+<div class="flex-1 flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline text-[28px]" data-icon="credit_card">credit_card</span>
+<div>
+<span class="block font-label-lg text-label-lg text-on-surface">Credit / Debit Card</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Visa, MasterCard, RuPay &amp; More</span>
+</div>
+</div>
+</label>
+<!-- Net Banking Option -->
+<label class="p-md md:p-lg flex gap-md items-center cursor-pointer hover:bg-surface-container-low transition-colors group">
+<div>
+<input class="w-5 h-5 text-primary border-outline focus:ring-primary focus:ring-offset-surface-container-lowest bg-surface-container-lowest" name="payment" type="radio"/>
+</div>
+<div class="flex-1 flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline text-[28px]" data-icon="account_balance">account_balance</span>
+<div>
+<span class="block font-label-lg text-label-lg text-on-surface">Net Banking</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">All major banks supported</span>
+</div>
+</div>
+</label>
+</div>
+</section>
+</div>
+<!-- Right Column: Order Summary -->
+<div class="lg:col-span-4 relative">
+<div class="sticky top-[108px] flex flex-col gap-md">
+<section class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-surface-variant overflow-hidden">
+<div class="p-md border-b border-surface-variant bg-surface-bright">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Order Summary</h2>
+</div>
+<div class="p-md flex flex-col gap-sm border-b border-surface-variant">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Items Total</span>
+<span class="font-body-md text-body-md text-on-surface">₹210</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Delivery Fee</span>
+<span class="font-body-md text-body-md text-on-surface">₹20</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Handling Fee</span>
+<span class="font-body-md text-body-md text-on-surface">₹9</span>
+</div>
+</div>
+<div class="p-md bg-surface-bright">
+<div class="flex justify-between items-center mb-md">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">To Pay</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">₹239</span>
+</div>
+<button class="w-full bg-[#0C831F] hover:bg-[#096b19] text-white font-label-lg text-label-lg py-sm px-md rounded-lg shadow-sm hover:shadow-md transition-all active:scale-[0.98] flex items-center justify-center gap-xs">
+                            Place Order
+                            <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</section>
+<div class="flex items-center justify-center gap-xs text-on-surface-variant/70 pt-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="lock">lock</span>
+<span class="font-label-md text-label-md">Secure 256-bit SSL encrypted payments</span>
+</div>
+</div>
+</div>
+</main>
+</body></html>

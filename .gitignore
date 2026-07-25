@@ -5,6 +5,10 @@
 
 # Raw collected data (large; small samples are committed separately)
 data/raw/
+data/intermediate/
+
+# Synthetic/unvalidated placeholder drafts — never ship
+DRAFT_SYNTHETIC/
 
 # Python
 __pycache__/

@@ -1,0 +1,13 @@
+# Pipeline core
+google-play-scraper==1.2.7
+requests==2.32.3
+pydantic==2.11.7
+rapidfuzz==3.13.0
+emoji==2.15.0
+
+# LLM providers
+groq==0.25.0
+google-genai==1.18.0
+
+# Utilities
+python-dotenv==1.1.1
