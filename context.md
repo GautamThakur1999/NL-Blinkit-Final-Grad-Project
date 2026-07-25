@@ -82,6 +82,11 @@ higher retention/LTV vs. Zepto & Swiggy Instamart, ROI on catalogue expansion.
   + **Groq API** (free tier). Deployment = **Vercel** (frontend) + **Railway**
   (backend). No paid APIs or services anywhere in the project.
 
+- **Reddit is out of scope.** Reddit's API returns HTTP 403 to unauthenticated
+  requests, and the project owner manually searched Reddit for quick-commerce
+  category discussions and found the yield poor. The collector retains OAuth
+  support but Reddit is not part of the corpus; record this as a documented
+  collection limitation in METHODOLOGY, not as an unfilled gap.
 - **Build a real data pipeline** for Part 1 — not a one-off analysis. It must *collect*
   reviews/feedback from all viable sources (Play Store, App Store, Reddit, community
   forums, social media, product reviews, quick-commerce discussions), then

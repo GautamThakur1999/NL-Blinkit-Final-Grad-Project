@@ -59,18 +59,16 @@ class RelevanceScore(BaseModel):
 
 def build_relevance_prompt(item: dict[str, Any]) -> tuple[str, str]:
     """Build the prompt for the LLM. Returns (system_msg, wrapped_data)."""
+    # Kept deliberately short: free-tier throughput is limited by tokens-per-minute,
+    # so every token in this system prompt is paid on every one of ~600 calls.
     system_msg = (
-        "You are an expert consumer behavior analyst reviewing e-commerce feedback for Blinkit/Grofers. "
-        "Determine if the feedback is relevant to identifying 'cross-category purchase barriers' "
-        "(i.e., why users hesitate to buy certain categories like electronics or fresh produce, "
-        "or their habits around specific categories). "
-        "The text may be in English or Latin-script Hinglish (e.g., 'sabzi kharab aayi'). "
-        "Score 'yes' if it explicitly discusses category behavior, 'partial' if it implies a barrier "
-        "or habit, or 'no' if it is generic praise, unrelated, or irrelevant.\n\n"
-        "Respond with ONLY a valid JSON object using EXACTLY these two keys:\n"
-        '  {"score": "yes" | "partial" | "no", "rationale": "<one short sentence>"}\n'
-        'Do not use any other key names. Do not wrap the JSON in markdown fences.\n'
-        'Example: {"score": "partial", "rationale": "Mentions only buying groceries, implying a habit loop."}'
+        "Rate Blinkit/Grofers app feedback for relevance to cross-category purchase "
+        "barriers (why users stick to some categories and avoid others). "
+        "Text may be English or Latin-script Hinglish.\n"
+        "yes = explicitly discusses category behavior; partial = implies a barrier or "
+        "habit; no = generic praise/unrelated.\n"
+        'Output only JSON with exactly these keys: {"score":"yes|partial|no",'
+        '"rationale":"one short sentence"}'
     )
     full_text = f"Context: {item.get('context', '')}\nReview: {item['text']}"
 
@@ -151,7 +149,11 @@ def process() -> None:
         item_id_key="id",
         prompt_builder=build_relevance_prompt,
         schema=RelevanceScore,
-        provider=Provider.GROQ,
+        # Gemini rather than Groq: Groq's free tier caps at 12k tokens/minute, which
+        # throttles this ~600-call stage into repeated 429s. Gemini has far more
+        # token headroom, and keeping Groq unspent preserves its daily request
+        # budget for the tagging stage (T3.2).
+        provider=Provider.GEMINI,
         batch_name="relevance",
         output_path=LLM_RESULTS_PATH,
         cursor_path=CURSOR_PATH,
