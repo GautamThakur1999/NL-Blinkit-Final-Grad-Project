@@ -48,9 +48,27 @@ def groq_api_key() -> str:
     return _require("GROQ_API_KEY")
 
 
+# ── Reddit OAuth (optional) ────────────────────────────────────────────────
+# Reddit returns HTTP 403 to unauthenticated API requests since the 2023 API
+# changes. Free "script" app credentials (https://www.reddit.com/prefs/apps)
+# restore access. Optional: without them the Reddit collector is skipped and
+# the omission is documented as a collection limitation.
+def reddit_client_id() -> str:
+    """Reddit OAuth client id — optional; empty string if unset."""
+    return _optional("REDDIT_CLIENT_ID")
+
+
+def reddit_client_secret() -> str:
+    """Reddit OAuth client secret — optional; empty string if unset."""
+    return _optional("REDDIT_CLIENT_SECRET")
+
+
 # ── Model defaults ─────────────────────────────────────────────────────────
 # These can be overridden via env vars if model versions change.
-GEMINI_MODEL = _optional("GEMINI_MODEL", "gemini-2.0-flash")
+# Note: `gemini-2.5-flash*` returns 404 for keys created after its retirement
+# to new users, and `gemini-2.0-flash` free-tier quota exhausts quickly.
+# `gemini-flash-latest` is the current working free-tier alias.
+GEMINI_MODEL = _optional("GEMINI_MODEL", "gemini-flash-latest")
 GROQ_MODEL = _optional("GROQ_MODEL", "llama-3.3-70b-versatile")
 
 # ── Rate limits (requests per minute) ──────────────────────────────────────

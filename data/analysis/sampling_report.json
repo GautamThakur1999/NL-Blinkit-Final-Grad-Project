@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-07-25T22:02:23.739099+00:00",
+  "sampling_frame": "05_burst_detected.jsonl",
+  "population_size": 4667,
+  "sample_size": 800,
+  "sampling_method": "stratified random sample without replacement; minority sources taken in full, majority source randomly sampled to fill the budget",
+  "random_seed": 20260726,
+  "reason": "Free-tier LLM quotas (Groq daily request cap, Gemini daily quota) make per-item scoring of the full corpus infeasible. Sampling occurs before relevance scoring so it cannot bias which barriers are surfaced.",
+  "population_by_source": {
+    "play_store": 4618,
+    "app_store": 49
+  },
+  "sample_by_source": {
+    "play_store": 751,
+    "app_store": 49
+  }
+}

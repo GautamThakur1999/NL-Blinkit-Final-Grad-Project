@@ -42,9 +42,26 @@ def build_tagger_prompt(item: dict[str, Any]) -> tuple[str, str]:
         "Your task is to extract structured insights from the provided text.\n\n"
         f"{taxonomy_text}\n"
         "CRITICAL INSTRUCTIONS:\n"
-        "1. You MUST output valid JSON conforming strictly to the requested schema.\n"
+        "1. Output ONLY a valid JSON object using EXACTLY the key names below. "
+        "Do not rename keys, add keys, or wrap the JSON in markdown fences.\n"
         "2. The 'key_quote' field MUST be an EXACT, VERBATIM substring copied directly from the provided text. Do not summarize or alter the quote. If there is no relevant quote, and the barrier is 'none', output 'none' for key_quote.\n"
-        "3. Map the barriers to hypotheses correctly: H1 (habit_loop), H2 (low_awareness), H3 (trust_quality), H4 (discovery_friction), H5 (missing_information).\n"
+        "3. Map the barriers to hypotheses correctly: H1 (habit_loop), H2 (low_awareness), H3 (trust_quality), H4 (discovery_friction), H5 (missing_information).\n\n"
+        "REQUIRED JSON SHAPE:\n"
+        "{\n"
+        '  "barriers": ["<one or more barrier ids from the taxonomy above>"],\n'
+        '  "categories_mentioned": ["<product categories referenced, [] if none>"],\n'
+        '  "channel_alternatives": ["<competing channels named, e.g. amazon, nykaa, local_store; [] if none>"],\n'
+        '  "discovery_mode": "search|reorder|browse|promo|word_of_mouth|accidental|null",\n'
+        '  "segment_hints": ["<user segment clues, e.g. parent, pet_owner, metro; [] if none>"],\n'
+        '  "sentiment": "positive|negative|mixed|neutral",\n'
+        '  "key_quote": "<verbatim substring of the review, or none>",\n'
+        '  "maps_to_hypotheses": ["H1"|"H2"|"H3"|"H4"|"H5"]\n'
+        "}\n\n"
+        "EXAMPLE OUTPUT:\n"
+        '{"barriers": ["habit_loop"], "categories_mentioned": ["groceries"], '
+        '"channel_alternatives": [], "discovery_mode": "reorder", '
+        '"segment_hints": ["metro"], "sentiment": "neutral", '
+        '"key_quote": "i only order milk and bread", "maps_to_hypotheses": ["H1"]}\n'
     )
     
     # 3. Build user prompt

@@ -20,6 +20,7 @@ import requests
 from pipeline.collectors.brand_guard import is_blinkit_related
 from pipeline.collectors.queries import SUBREDDITS, classify_era, get_all_queries
 from pipeline.collectors.schemas import RawRecord, make_id
+from pipeline.config import reddit_client_id, reddit_client_secret
 from pipeline.common import (
     RAW_DIR,
     append_jsonl,
@@ -32,6 +33,49 @@ logger = logging.getLogger(__name__)
 
 OUTPUT_PATH = RAW_DIR / "reddit.jsonl"
 REDDIT_BASE = "https://www.reddit.com"
+REDDIT_OAUTH_BASE = "https://oauth.reddit.com"
+USER_AGENT = "windows:blinkit-category-research:v1.0 (research pipeline)"
+
+# Reddit blocks unauthenticated JSON API access (HTTP 403) as of the 2023 API
+# changes. Free "script" app credentials restore access:
+#   1. https://www.reddit.com/prefs/apps -> "create another app..." -> type: script
+#   2. Put the client id and secret in .env as REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET
+# Without credentials the collector exits cleanly and the run proceeds with the
+# remaining sources (documented as a limitation, never silently skipped).
+_TOKEN_CACHE: dict[str, str] = {}
+
+
+def get_access_token() -> str | None:
+    """
+    Obtain an app-only OAuth token. Returns None if credentials are absent
+    or rejected (caller then skips Reddit collection).
+    """
+    if "token" in _TOKEN_CACHE:
+        return _TOKEN_CACHE["token"]
+
+    client_id = reddit_client_id()
+    client_secret = reddit_client_secret()
+    if not client_id or not client_secret:
+        return None
+
+    try:
+        resp = requests.post(
+            f"{REDDIT_BASE}/api/v1/access_token",
+            auth=(client_id, client_secret),
+            data={"grant_type": "client_credentials"},
+            headers={"User-Agent": USER_AGENT},
+            timeout=20,
+        )
+        resp.raise_for_status()
+        token = resp.json().get("access_token")
+    except Exception as exc:
+        logger.error("Reddit OAuth failed: %s", exc)
+        return None
+
+    if not token:
+        return None
+    _TOKEN_CACHE["token"] = token
+    return token
 
 # ── Boilerplate / Bot filters ──────────────────────────────────────────────
 _KNOWN_BOTS = {"AutoModerator", "RemindMeBot", "imguralbumbot"}
@@ -57,9 +101,13 @@ def _is_valid_post(post_data: dict) -> bool:
     return True
 
 
-def fetch_subreddit_search(subreddit: str, query: str, after: str | None = None) -> dict:
-    """Fetch one page of search results from a subreddit."""
-    url = f"{REDDIT_BASE}/r/{subreddit}/search.json"
+def fetch_subreddit_search(
+    subreddit: str, query: str, after: str | None = None, token: str | None = None
+) -> dict:
+    """Fetch one page of search results from a subreddit (OAuth endpoint)."""
+    base = REDDIT_OAUTH_BASE if token else REDDIT_BASE
+    suffix = "" if token else ".json"
+    url = f"{base}/r/{subreddit}/search{suffix}"
     params = {
         "q": query,
         "restrict_sr": "1",
@@ -69,19 +117,20 @@ def fetch_subreddit_search(subreddit: str, query: str, after: str | None = None)
     if after:
         params["after"] = after
 
-    # Reddit requires a unique User-Agent
-    headers = {"User-Agent": "windows:blinkit_research_pipeline:v1.0 (by /u/researcher)"}
-    
-    # Polite pacing to avoid 429 Too Many Requests (C18)
-    time.sleep(2.0)
-    
-    resp = requests.get(url, params=params, headers=headers, timeout=15)
-    
+    headers = {"User-Agent": USER_AGENT}
+    if token:
+        headers["Authorization"] = f"bearer {token}"
+
+    # Polite pacing to avoid 429 Too Many Requests (C17)
+    time.sleep(1.5)
+
+    resp = requests.get(url, params=params, headers=headers, timeout=20)
+
     if resp.status_code == 429:
         logger.warning(f"Rate limited by Reddit API on {subreddit}, sleeping 30s...")
         time.sleep(30)
-        resp = requests.get(url, params=params, headers=headers, timeout=15)
-        
+        resp = requests.get(url, params=params, headers=headers, timeout=20)
+
     resp.raise_for_status()
     return resp.json()
 
@@ -90,7 +139,18 @@ def collect() -> None:
     """Run the Reddit collector."""
     setup_logging()
     logger.info("Starting Reddit collection")
-    
+
+    token = get_access_token()
+    if not token:
+        logger.error(
+            "No Reddit OAuth token — unauthenticated access returns HTTP 403. "
+            "Set REDDIT_CLIENT_ID and REDDIT_CLIENT_SECRET in .env "
+            "(create a free 'script' app at https://www.reddit.com/prefs/apps). "
+            "Skipping Reddit; this is recorded as a collection limitation."
+        )
+        return
+    logger.info("Reddit OAuth token acquired")
+
     queries = get_all_queries()
     corpus_added = 0
     now_iso = utc_now_iso()
@@ -103,7 +163,7 @@ def collect() -> None:
             
             while pages < 5:  # Cap at 5 pages per query per subreddit
                 try:
-                    data = fetch_subreddit_search(subreddit, query, after)
+                    data = fetch_subreddit_search(subreddit, query, after, token)
                 except requests.exceptions.HTTPError as exc:
                     if exc.response.status_code == 403:
                         logger.error(f"Reddit API blocked us (403). Aborting Reddit collection to save time.")

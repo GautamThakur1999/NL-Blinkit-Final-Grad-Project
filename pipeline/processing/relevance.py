@@ -15,7 +15,7 @@ import re
 from pathlib import Path
 from typing import Any, Literal
 
-from pydantic import BaseModel
+from pydantic import AliasChoices, BaseModel, Field
 
 from pipeline.processing.schemas import CleanRecord
 from pipeline.common import (
@@ -28,7 +28,11 @@ from pipeline.llm import get_gateway, Provider
 
 logger = logging.getLogger(__name__)
 
-INPUT_PATH = DATA_DIR / "intermediate" / "05_burst_detected.jsonl"
+# The LLM stages run over the sampled corpus (see pipeline/processing/sample.py).
+# Falls back to the full burst-detected corpus if no sample has been drawn.
+_SAMPLED_PATH = DATA_DIR / "intermediate" / "06_sampled.jsonl"
+_FULL_PATH = DATA_DIR / "intermediate" / "05_burst_detected.jsonl"
+INPUT_PATH = _SAMPLED_PATH if _SAMPLED_PATH.exists() else _FULL_PATH
 CORPUS_PATH = DATA_DIR / "clean" / "corpus.jsonl"
 REJECTED_PATH = DATA_DIR / "intermediate" / "06_rejected.jsonl"
 CURSOR_PATH = DATA_DIR / "state" / "relevance_cursor.json"
@@ -41,8 +45,17 @@ OPS_KEYWORDS = re.compile(
 )
 
 class RelevanceScore(BaseModel):
-    score: Literal["yes", "partial", "no"]
-    rationale: str
+    # Models frequently name this field "relevance" or "relevance_score" instead of
+    # "score". Accepting those aliases avoids dead-lettering otherwise-valid
+    # responses over a key-naming difference (A1).
+    model_config = {"populate_by_name": True}
+
+    score: Literal["yes", "partial", "no"] = Field(
+        ..., validation_alias=AliasChoices("score", "relevance", "relevance_score")
+    )
+    rationale: str = Field(
+        ..., validation_alias=AliasChoices("rationale", "reason", "explanation")
+    )
 
 def build_relevance_prompt(item: dict[str, Any]) -> tuple[str, str]:
     """Build the prompt for the LLM. Returns (system_msg, wrapped_data)."""
@@ -51,14 +64,16 @@ def build_relevance_prompt(item: dict[str, Any]) -> tuple[str, str]:
         "Determine if the feedback is relevant to identifying 'cross-category purchase barriers' "
         "(i.e., why users hesitate to buy certain categories like electronics or fresh produce, "
         "or their habits around specific categories). "
-        "Respond ONLY with valid JSON. "
         "The text may be in English or Latin-script Hinglish (e.g., 'sabzi kharab aayi'). "
         "Score 'yes' if it explicitly discusses category behavior, 'partial' if it implies a barrier "
-        "or habit, or 'no' if it is generic praise, unrelated, or irrelevant. "
-        "Provide a one-line rationale."
+        "or habit, or 'no' if it is generic praise, unrelated, or irrelevant.\n\n"
+        "Respond with ONLY a valid JSON object using EXACTLY these two keys:\n"
+        '  {"score": "yes" | "partial" | "no", "rationale": "<one short sentence>"}\n'
+        'Do not use any other key names. Do not wrap the JSON in markdown fences.\n'
+        'Example: {"score": "partial", "rationale": "Mentions only buying groceries, implying a habit loop."}'
     )
     full_text = f"Context: {item.get('context', '')}\nReview: {item['text']}"
-    
+
     return system_msg, full_text
 
 def process() -> None:
