@@ -7,7 +7,7 @@ from __future__ import annotations
 import contextvars
 from typing import Literal
 
-from pydantic import BaseModel, model_validator
+from pydantic import BaseModel, field_validator, model_validator
 
 # We use a ContextVar to pass the raw text down into the Pydantic validator
 # so we can enforce the verbatim quote rule strictly during LLM validation,
@@ -50,6 +50,58 @@ class TaggedItemSchema(BaseModel):
             )
             
         return self
+
+class BatchTaggedItem(BaseModel):
+    """
+    One item inside a batched tagging response.
+
+    Deliberately has NO verbatim validator: a single ContextVar cannot describe
+    several source texts at once. The caller re-validates each entry through
+    ``TaggedItemSchema`` with that item's own raw text bound, so the verbatim
+    guarantee is enforced per item exactly as in the single-item path.
+
+    ``index`` refers to the 1-based REVIEW number in the prompt. Short integers
+    are used instead of the full record ids because ids are ~10 tokens each and
+    the whole point of batching is token economy.
+    """
+
+    index: int
+    barriers: list[str] = []
+    categories_mentioned: list[str] = []
+    channel_alternatives: list[str] = []
+    # Models emit JSON null here rather than the string "null" when no discovery
+    # mode is evident. Accept both and normalise, otherwise a whole batch is
+    # dead-lettered over a null vs "null" difference.
+    discovery_mode: str | None = None
+    segment_hints: list[str] = []
+    sentiment: str = "neutral"
+    key_quote: str | None = None
+    maps_to_hypotheses: list[str] = []
+
+    @field_validator("discovery_mode", mode="before")
+    @classmethod
+    def _discovery_null(cls, v: object) -> str:
+        # TaggedItemSchema.discovery_mode is a Literal that includes "null"
+        return "null" if v is None else str(v)
+
+    @field_validator("key_quote", mode="before")
+    @classmethod
+    def _quote_null(cls, v: object) -> str:
+        # "none" is the sentinel the verbatim validator recognises for
+        # "no relevant quote" — not "null"
+        if v is None:
+            return "none"
+        return "none" if str(v).strip().lower() in {"null", ""} else str(v)
+
+    @field_validator("barriers", "maps_to_hypotheses", mode="before")
+    @classmethod
+    def _none_to_empty(cls, v: object) -> object:
+        return [] if v is None else v
+
+
+class BatchTagResponse(BaseModel):
+    results: list[BatchTaggedItem]
+
 
 class ThemeEvidence(BaseModel):
     item_id: str

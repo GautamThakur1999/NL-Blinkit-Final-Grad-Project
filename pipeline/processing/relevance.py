@@ -66,6 +66,60 @@ class RelevanceScore(BaseModel):
         ..., validation_alias=AliasChoices("rationale", "reason", "explanation")
     )
 
+def merge_only() -> None:
+    """
+    Fold already-scored LLM results into the corpus without making any API calls.
+
+    Needed because the scoring stage persists results incrementally but only
+    merges them into corpus.jsonl after the whole batch finishes. When a run is
+    cut short by provider throttling, the completed scores are on disk yet
+    absent from the corpus. This recovers them.
+
+    Safe to re-run: items already present in the corpus are skipped.
+
+    Usage:  python -m pipeline.processing.relevance --merge-only
+    """
+    setup_logging()
+    llm_results_path = DATA_DIR / "state" / "relevance_llm_results.jsonl"
+    if not llm_results_path.exists():
+        logger.error("No scored results at %s", llm_results_path)
+        return
+
+    processed_ids: set[str] = set()
+    for path in (CORPUS_PATH, REJECTED_PATH):
+        if path.exists():
+            for rec in iter_jsonl(path):
+                processed_ids.add(rec["id"])
+
+    source_map = {rec["id"]: rec for rec in iter_jsonl(INPUT_PATH)}
+
+    kept = rejected = skipped = 0
+    for row in iter_jsonl(llm_results_path):
+        item_id = row.get("item_id")
+        if not item_id or item_id in processed_ids or item_id not in source_map:
+            skipped += 1
+            continue
+
+        rec = CleanRecord.model_validate(source_map[item_id])
+        score_obj = RelevanceScore.model_validate(row["result"])
+        rec.relevant_to_category_behavior = score_obj.score
+        rec.relevance_rationale = score_obj.rationale
+        rec.relevance_pass = "llm"
+
+        if score_obj.score in ("yes", "partial"):
+            append_jsonl(CORPUS_PATH, rec.model_dump(exclude_none=True))
+            kept += 1
+        else:
+            append_jsonl(REJECTED_PATH, rec.model_dump(exclude_none=True))
+            rejected += 1
+        processed_ids.add(item_id)
+
+    logger.info(
+        "Merge complete. Kept: %d. Rejected: %d. Skipped (already merged): %d.",
+        kept, rejected, skipped,
+    )
+
+
 def build_relevance_prompt(item: dict[str, Any]) -> tuple[str, str]:
     """Build the prompt for the LLM. Returns (system_msg, wrapped_data)."""
     # Kept deliberately short: free-tier throughput is limited by tokens-per-minute,
@@ -211,4 +265,9 @@ def process() -> None:
 
 
 if __name__ == "__main__":
-    process()
+    import sys
+
+    if "--merge-only" in sys.argv:
+        merge_only()
+    else:
+        process()
