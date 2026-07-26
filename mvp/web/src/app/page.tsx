@@ -40,6 +40,10 @@ export default function CartPage() {
         const timeOfDay = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         const dayOfWeek = now.toLocaleDateString('en-US', { weekday: 'long' });
 
+        // Hard client-side deadline. When both LLM free tiers are quota-exhausted
+        // the upstream call can stall rather than error, which would leave the
+        // cart spinning indefinitely. Failing fast here drops us into the
+        // degraded suggestion below instead (M9).
         const res = await fetch(`${apiUrl}/api/recommend`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -47,7 +51,8 @@ export default function CartPage() {
             items: cart.map(item => item.name),
             time_of_day: timeOfDay,
             day_of_week: dayOfWeek
-          })
+          }),
+          signal: AbortSignal.timeout(15000)
         });
 
         if (!res.ok) throw new Error("API failed");

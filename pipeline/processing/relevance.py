@@ -11,6 +11,7 @@ Items scoring `no` go to `06_rejected.jsonl`.
 from __future__ import annotations
 
 import logging
+import os
 import re
 from pathlib import Path
 from typing import Any, Literal
@@ -27,6 +28,14 @@ from pipeline.common import (
 from pipeline.llm import get_gateway, Provider
 
 logger = logging.getLogger(__name__)
+
+# Which provider scores relevance. Override with RELEVANCE_PROVIDER=gemini|groq
+# depending on which free tier currently has headroom.
+RELEVANCE_PROVIDER = (
+    Provider.GEMINI
+    if os.environ.get("RELEVANCE_PROVIDER", "groq").lower() == "gemini"
+    else Provider.GROQ
+)
 
 # The LLM stages run over the sampled corpus (see pipeline/processing/sample.py).
 # Falls back to the full burst-detected corpus if no sample has been drawn.
@@ -149,11 +158,12 @@ def process() -> None:
         item_id_key="id",
         prompt_builder=build_relevance_prompt,
         schema=RelevanceScore,
-        # Gemini rather than Groq: Groq's free tier caps at 12k tokens/minute, which
-        # throttles this ~600-call stage into repeated 429s. Gemini has far more
-        # token headroom, and keeping Groq unspent preserves its daily request
-        # budget for the tagging stage (T3.2).
-        provider=Provider.GEMINI,
+        # Provider is configurable because the two free tiers fail in different
+        # ways and recover on different clocks: Groq caps tokens-per-minute
+        # (throttles a long run), Gemini caps requests-per-day (hard stop until
+        # reset). Whichever has headroom at run time should be used, so this is
+        # an env setting rather than a hardcoded choice.
+        provider=RELEVANCE_PROVIDER,
         batch_name="relevance",
         output_path=LLM_RESULTS_PATH,
         cursor_path=CURSOR_PATH,
