@@ -30,8 +30,12 @@ export default function CartPage() {
   useEffect(() => {
     async function fetchRecommendation() {
       try {
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-        
+        // Same-origin by default: the recommender runs as a Next.js route handler
+        // at /api/recommend, so there is no cross-origin request and no CORS to
+        // configure. Set NEXT_PUBLIC_API_URL only when pointing at a separately
+        // hosted backend (e.g. the FastAPI service in mvp/api).
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? "";
+
         const now = new Date();
         const timeOfDay = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         const dayOfWeek = now.toLocaleDateString('en-US', { weekday: 'long' });

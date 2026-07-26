@@ -19,12 +19,21 @@ GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 
 app = FastAPI(title="Blinkit Discovery MVP API")
 
-# M8: Explicit CORS allowlist
+# M7: Explicit CORS allowlist.
+#
+# NOTE: production runs the recommender as a Next.js route handler at
+# /api/recommend (same origin), so CORS does not apply there. This FastAPI
+# service is the local-development and alternative-hosting path.
+#
+# Origins come from the ALLOWED_ORIGINS env var (comma-separated) so the
+# deployed frontend domain is configured at deploy time rather than hardcoded —
+# the previous hardcoded placeholder domains did not exist and would have failed
+# silently in production.
+_DEFAULT_ORIGINS = "http://localhost:3000,http://localhost:5173"
 ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://localhost:5173",
-    "https://quick-commerce-discovery-agent.vercel.app",
-    "https://blinkit-mvp.vercel.app",
+    origin.strip()
+    for origin in os.environ.get("ALLOWED_ORIGINS", _DEFAULT_ORIGINS).split(",")
+    if origin.strip()
 ]
 
 # Configure CORS
@@ -80,7 +89,10 @@ Late night snack? You might also need a charger for your phone!|||item_102
 """
 
 async def call_gemini_stream(user_prompt: str) -> AsyncGenerator[str, None]:
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:streamGenerateContent?alt=sse&key={GEMINI_API_KEY}"
+    # gemini-1.5-flash returns 404 for API keys issued after its retirement to
+    # new users; gemini-flash-latest is the current free-tier alias.
+    model = os.environ.get("MODEL_GEMINI", "gemini-flash-latest")
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:streamGenerateContent?alt=sse&key={GEMINI_API_KEY}"
     payload = {
         "contents": [{"role": "user", "parts": [{"text": user_prompt}]}],
         "systemInstruction": {"role": "system", "parts": [{"text": SYSTEM_PROMPT}]},
@@ -110,7 +122,8 @@ async def call_groq_stream(user_prompt: str) -> AsyncGenerator[str, None]:
     url = "https://api.groq.com/openai/v1/chat/completions"
     headers = {"Authorization": f"Bearer {GROQ_API_KEY}"}
     payload = {
-        "model": "llama3-8b-8192",
+        # llama3-8b-8192 is decommissioned on Groq.
+        "model": os.environ.get("MODEL_GROQ", "llama-3.3-70b-versatile"),
         "messages": [
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": user_prompt}
