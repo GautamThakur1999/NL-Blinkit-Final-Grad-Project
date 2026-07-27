@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Category Discovery Insights</title>
+<style>
+  :root{
+    --surface:#F4F5F7; --card:#FFFFFF; --ink:#1F1F1F; --muted:#5B6270;
+    --primary:#F8CB46; --success:#0C831F; --danger:#BA1A1A; --line:#E2E8F0;
+    --sidebar:260px; --radius:16px;
+    --shadow:0 4px 12px rgba(0,0,0,.05);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--surface);color:var(--ink);
+    font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    font-feature-settings:"tnum";}
+  a{color:inherit}
+  .layout{display:flex;min-height:100vh}
+  /* Sidebar */
+  .sidebar{width:var(--sidebar);flex:0 0 var(--sidebar);background:var(--card);
+    border-right:1px solid var(--line);padding:24px 0;position:sticky;top:0;height:100vh;overflow:auto}
+  .brand{padding:0 24px 20px;border-bottom:1px solid var(--line);margin-bottom:16px}
+  .brand h1{font-size:16px;margin:0;letter-spacing:-.01em}
+  .brand span{font-size:11px;font-weight:600;letter-spacing:.05em;color:var(--muted);text-transform:uppercase}
+  .nav a{display:block;padding:10px 24px;font-size:14px;color:var(--muted);text-decoration:none;border-left:4px solid transparent}
+  .nav a:hover{background:#F9FAFB;color:var(--ink)}
+  .nav a.active{color:var(--ink);font-weight:600;border-left-color:var(--primary);background:#FFFDF5}
+  /* Main */
+  .main{flex:1;padding:24px 32px 64px;max-width:1180px}
+  header.page{margin-bottom:8px}
+  header.page h2{font-size:28px;margin:0 0 4px;letter-spacing:-.02em}
+  header.page p{margin:0;color:var(--muted);font-size:14px}
+  section{margin-top:32px;scroll-margin-top:24px}
+  section h3{font-size:18px;margin:0 0 12px;letter-spacing:-.01em}
+  .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+  .grid{display:grid;gap:16px}
+  .kpis{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+  .kpi .label{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+  .kpi .value{font-size:30px;font-weight:700;letter-spacing:-.02em;margin-top:6px}
+  .kpi .sub{font-size:13px;color:var(--muted);margin-top:2px}
+  /* Bars */
+  .bar-row{display:grid;grid-template-columns:190px 1fr 78px;align-items:center;gap:12px;margin-bottom:10px}
+  .bar-track{background:#EEF0F3;border-radius:999px;height:26px;overflow:hidden}
+  .bar-fill{height:100%;background:var(--primary);border-radius:999px}
+  .bar-fill.zero{background:repeating-linear-gradient(45deg,#E6E8EC,#E6E8EC 6px,#F1F2F5 6px,#F1F2F5 12px)}
+  .bar-name{font-size:14px}
+  .bar-val{font-size:14px;font-weight:600;text-align:right}
+  /* Chips */
+  .chip{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.03em}
+  .chip.strong{background:rgba(12,131,31,.12);color:var(--success)}
+  .chip.moderate{background:rgba(248,203,70,.25);color:#7A5B00}
+  .chip.weak{background:#EEF0F3;color:var(--muted)}
+  .chip.none{background:rgba(186,26,26,.10);color:var(--danger)}
+  .chip.src{background:#EEF0F3;color:var(--muted);margin-right:4px}
+  /* Theme cards */
+  .theme{border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px;background:var(--card)}
+  .theme h4{margin:0 0 4px;font-size:15px}
+  .theme .desc{font-size:13px;color:var(--muted);margin-bottom:10px}
+  blockquote{margin:8px 0;padding:10px 12px;background:#F9FAFB;border-left:3px solid var(--primary);
+    border-radius:6px;font-size:13px}
+  blockquote .attr{display:block;margin-top:6px;font-size:11px;color:var(--muted)}
+  /* Table */
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th{text-align:left;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--line)}
+  td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:hover td{background:#F9FAFB}
+  /* Notices */
+  .notice{border-left:4px solid var(--primary);background:#FFFDF5;padding:14px 16px;border-radius:8px;font-size:13.5px}
+  .notice.warn{border-left-color:var(--danger);background:#FFF7F7}
+  .notice strong{display:block;margin-bottom:4px}
+  .muted{color:var(--muted);font-size:13px}
+  .scroll-x{overflow-x:auto}
+  @media (max-width:900px){
+    .sidebar{display:none}
+    .main{padding:20px}
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="brand">
+      <span>Growth Research</span>
+      <h1>Category Discovery Insights</h1>
+    </div>
+    <nav class="nav" id="nav">
+      <a href="#overview" class="active">Overview</a>
+      <a href="#barriers">Barriers</a>
+      <a href="#scorecard">Hypothesis Scorecard</a>
+      <a href="#themes">Themes &amp; Evidence</a>
+      <a href="#questions">Research Questions</a>
+      <a href="#validation">Validation</a>
+      <a href="#method">Method &amp; Limitations</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header class="page">
+      <h2>Category Discovery Insights</h2>
+      <p id="subtitle">Loading…</p>
+    </header>
+
+    <div id="content"></div>
+  </main>
+</div>
+
+<script>
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => (
+  {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const pct = n => (n*100).toFixed(1) + "%";
+const nice = s => String(s??"").replace(/_/g," ").replace(/\b\w/g, m => m.toUpperCase());
+
+function strengthChip(s){
+  const map = {strong:"strong", moderate:"moderate", weak:"weak", contradicted:"none", no_evidence:"none"};
+  const label = s === "no_evidence" ? "no evidence" : s;
+  return `<span class="chip ${map[s]||"weak"}">${esc(label)}</span>`;
+}
+
+function themeCard(t){
+  const quotes = (t.exemplar_quotes||[]).filter(q=>q.text).map(q=>`
+    <blockquote>“${esc(q.text)}”
+      <span class="attr">${esc(q.source)}${q.source_url?` · <a href="${esc(q.source_url)}" target="_blank" rel="noopener">source</a>`:""}</span>
+    </blockquote>`).join("");
+  const srcs = (t.source_types||[]).map(s=>`<span class="chip src">${esc(s)}</span>`).join("");
+  const weak = t.is_weak_signal
+    ? `<div class="muted" style="margin-top:8px">⚠ Weak signal — ${esc(t.weak_signal_reason||"")}</div>` : "";
+  return `<div class="theme">
+    <h4>${esc(t.theme_name)}</h4>
+    <div class="desc">${esc(t.description)}</div>
+    <div style="margin-bottom:8px">${srcs}
+      <span class="chip src">${t.evidence_count} item${t.evidence_count===1?"":"s"}</span>
+      <span class="chip src">${esc(nice(t.barrier))}</span></div>
+    ${quotes}${weak}
+  </div>`;
+}
+
+function render(d){
+  const m = d.meta, k = d.kpis, v = d.validation;
+  document.getElementById("subtitle").textContent =
+    `${(k.reviews_collected||0).toLocaleString()} reviews collected · ${k.items_tagged} analysed · generated ${new Date(m.generated_at).toLocaleDateString()}`;
+
+  const maxBar = Math.max(1, ...d.barriers.map(b=>b.count));
+  const allBars = [...d.barriers, ...d.barriers_zero_evidence];
+
+  const html = `
+  <section id="overview">
+    <div class="grid kpis">
+      <div class="card kpi"><div class="label">Reviews Collected</div>
+        <div class="value">${(k.reviews_collected||0).toLocaleString()}</div>
+        <div class="sub">${(m.sources||[]).join(" · ")}</div></div>
+      <div class="card kpi"><div class="label">Corpus Analysed</div>
+        <div class="value">${k.corpus_analysed}</div>
+        <div class="sub">after relevance filtering</div></div>
+      <div class="card kpi"><div class="label">Verbatim Quotes</div>
+        <div class="value">${k.quotes_verbatim_verified}</div>
+        <div class="sub">programmatically verified</div></div>
+      <div class="card kpi"><div class="label">Themes</div>
+        <div class="value">${k.themes_strong}<span style="font-size:16px;color:var(--muted)"> / ${k.themes_total}</span></div>
+        <div class="sub">triangulated / total</div></div>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <div class="notice"><strong>Headline finding</strong>
+      App-store reviews evidence <b>trust &amp; quality</b> barriers strongly, but contain
+      <b>no evidence</b> for habit loops, low awareness, or discovery friction. Reviews are written about
+      delivery and product problems — not about categories users never knew existed. Primary interviews are
+      required to test those hypotheses.</div>
+    </div>
+  </section>
+
+  <section id="barriers">
+    <h3>Barriers to Category Exploration</h3>
+    <div class="card">
+      ${allBars.map(b=>`
+        <div class="bar-row">
+          <div class="bar-name">${esc(nice(b.id))}${b.hypothesis?` <span class="chip src">${esc(b.hypothesis)}</span>`:""}</div>
+          <div class="bar-track"><div class="bar-fill ${b.count===0?"zero":""}" style="width:${b.count? Math.max(2,(b.count/maxBar)*100):100}%"></div></div>
+          <div class="bar-val">${b.count}${b.count?` · ${pct(b.share)}`:""}</div>
+        </div>`).join("")}
+      <div class="muted" style="margin-top:10px">Hatched bars are pre-registered hypotheses with zero supporting evidence — shown so their absence is visible.</div>
+    </div>
+  </section>
+
+  <section id="scorecard">
+    <h3>Hypothesis Scorecard</h3>
+    <div class="card scroll-x">
+      <table><thead><tr><th>Hypothesis</th><th>Evidence</th><th>Finding</th></tr></thead><tbody>
+      ${d.hypothesis_scorecard.map(s=>`<tr>
+        <td><b>${esc(nice(s.hypothesis_id))}</b></td>
+        <td>${strengthChip(s.evidence_strength)}</td>
+        <td>${esc((s.findings||[])[0]||"")}</td></tr>`).join("")}
+      </tbody></table>
+    </div>
+  </section>
+
+  <section id="themes">
+    <h3>Triangulated Themes <span class="muted">(≥3 items, ≥2 sources)</span></h3>
+    <div>${d.themes_strong.length ? d.themes_strong.map(themeCard).join("")
+      : `<div class="card muted">No themes cleared the triangulation threshold.</div>`}</div>
+    <h3 style="margin-top:24px">Weak Signals <span class="muted">(reported, not promoted)</span></h3>
+    <div>${d.themes_weak.slice(0,6).map(themeCard).join("")}</div>
+    ${d.themes_weak.length>6?`<div class="muted">+ ${d.themes_weak.length-6} more weak-signal themes in the full dataset.</div>`:""}
+  </section>
+
+  <section id="questions">
+    <h3>The 8 Research Questions</h3>
+    ${d.research_questions.map(q=>`<div class="card" style="margin-bottom:12px">
+      <div class="label" style="font-size:11px;font-weight:600;letter-spacing:.05em;color:var(--muted)">${esc(q.id)}</div>
+      <h4 style="margin:4px 0 6px;font-size:15px">${esc(q.title)}</h4>
+      <div style="font-size:14px">${esc(q.answer)}</div>
+      ${q.supporting_themes.length?`<div style="margin-top:8px">${q.supporting_themes.map(t=>`<span class="chip src">${esc(t)}</span>`).join("")}</div>`
+        :`<div class="muted" style="margin-top:8px">No supporting themes — reported as a null finding.</div>`}
+    </div>`).join("")}
+  </section>
+
+  <section id="validation">
+    <h3>Insight Quality Validation</h3>
+    <div class="card">
+      <div class="grid kpis">
+        <div class="kpi"><div class="label">Traceability Audit</div>
+          <div class="value" style="color:${v.traceability_passed?"var(--success)":"var(--danger)"}">${v.traceability_passed?"PASSED":"FAILED"}</div>
+          <div class="sub">insight → theme → quote → URL</div></div>
+        <div class="kpi"><div class="label">Quotes Checked</div><div class="value">${v.quotes_checked}</div>
+          <div class="sub">${v.quotes_without_url} without a source URL</div></div>
+        <div class="kpi"><div class="label">Orphan Insights</div><div class="value">${v.orphan_insights.length}</div>
+          <div class="sub">claims without evidence</div></div>
+        <div class="kpi"><div class="label">Null Findings</div><div class="value">${v.null_finding_insights.length}</div>
+          <div class="sub">honest "no evidence" answers</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="method">
+    <h3>Method &amp; Limitations</h3>
+    <div class="card">
+      <div class="notice warn"><strong>Read this alongside every number above</strong>
+      Findings come from a <b>${m.sampling.sample_size} of ${m.sampling.population_size}</b> ${esc(m.sampling.method||"random sample")}
+      (seed ${m.sampling.seed}). ${esc(m.sampling.reason||"")}</div>
+      <ul class="muted" style="margin-top:14px;line-height:1.8">
+        <li><b>Sources:</b> ${Object.entries(m.source_counts||{}).map(([s,c])=>`${esc(s)} (${c})`).join(", ")}. Reddit was excluded — its API rejects unauthenticated access and a manual search returned poor yield for category-discovery discussion.</li>
+        <li><b>iOS coverage is recency-capped</b> — the App Store RSS feed exposes only recent reviews, so App Store volume is far smaller than Play Store.</li>
+        <li><b>Instrument limitation:</b> ~94% of scored reviews carried no cross-category signal. App-store reviews are a weak instrument for discovery research.</li>
+        <li><b>Quotes are verbatim</b> — each was programmatically verified as an exact substring of the original review; hallucinated quotes were rejected.</li>
+        <li><b>Weak signals are shown, not hidden</b> — themes below the ≥3-item / ≥2-source threshold are labelled rather than promoted or dropped.</li>
+      </ul>
+    </div>
+  </section>`;
+  document.getElementById("content").innerHTML = html;
+
+  // scroll-spy
+  const links = [...document.querySelectorAll("#nav a")];
+  const obs = new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      links.forEach(l=>l.classList.toggle("active", l.getAttribute("href")==="#"+e.target.id));
+    }});
+  },{rootMargin:"-10% 0px -80% 0px"});
+  document.querySelectorAll("section").forEach(s=>obs.observe(s));
+}
+
+fetch("./dashboard.json")
+  .then(r=>{ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
+  .then(render)
+  .catch(e=>{
+    document.getElementById("subtitle").textContent = "Failed to load data";
+    document.getElementById("content").innerHTML =
+      `<div class="card"><div class="notice warn"><strong>Could not load dashboard.json</strong>${esc(e.message)}</div></div>`;
+  });
+</script>
+</body>
+</html>

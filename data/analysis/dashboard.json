@@ -1,0 +1,711 @@
+{
+  "meta": {
+    "generated_at": "2026-07-27T05:07:42.889493+00:00",
+    "corpus_size": 221,
+    "tagged_items": 220,
+    "sources": [
+      "app_store",
+      "play_store"
+    ],
+    "source_counts": {
+      "play_store": 206,
+      "app_store": 14
+    },
+    "collection_total_records": 10000,
+    "collection_date_range": {
+      "earliest": "2026-07-16T07:53:50+00:00",
+      "latest": "2026-07-23T09:27:01+00:00"
+    },
+    "sampling": {
+      "population_size": 4667,
+      "sample_size": 800,
+      "method": "stratified random sample without replacement; minority sources taken in full, majority source randomly sampled to fill the budget",
+      "seed": 20260726,
+      "reason": "Free-tier LLM quotas (Groq daily request cap, Gemini daily quota) make per-item scoring of the full corpus infeasible. Sampling occurs before relevance scoring so it cannot bias which barriers are surfaced."
+    }
+  },
+  "kpis": {
+    "reviews_collected": 10000,
+    "corpus_analysed": 221,
+    "items_tagged": 220,
+    "quotes_verbatim_verified": 148,
+    "themes_total": 18,
+    "themes_strong": 2,
+    "sentiment": {
+      "positive": 73,
+      "negative": 130,
+      "mixed": 16,
+      "neutral": 1
+    }
+  },
+  "barriers": [
+    {
+      "id": "other_emergent",
+      "hypothesis": null,
+      "count": 88,
+      "share": 0.4
+    },
+    {
+      "id": "trust_quality",
+      "hypothesis": "H3",
+      "count": 42,
+      "share": 0.1909
+    },
+    {
+      "id": "price_perception",
+      "hypothesis": null,
+      "count": 25,
+      "share": 0.1136
+    },
+    {
+      "id": "assortment_gap",
+      "hypothesis": null,
+      "count": 5,
+      "share": 0.0227
+    },
+    {
+      "id": "missing_information",
+      "hypothesis": "H5",
+      "count": 2,
+      "share": 0.0091
+    }
+  ],
+  "barriers_zero_evidence": [
+    {
+      "id": "habit_loop",
+      "hypothesis": "H1",
+      "count": 0,
+      "share": 0.0
+    },
+    {
+      "id": "low_awareness",
+      "hypothesis": "H2",
+      "count": 0,
+      "share": 0.0
+    },
+    {
+      "id": "discovery_friction",
+      "hypothesis": "H4",
+      "count": 0,
+      "share": 0.0
+    }
+  ],
+  "themes_strong": [
+    {
+      "theme_name": "Poor Customer Support",
+      "description": "Customers are experiencing difficulties with customer support, including unhelpful representatives, long wait times, and unresolvable issues.",
+      "barrier": "other_emergent",
+      "evidence_count": 10,
+      "source_types": [
+        "app_store",
+        "play_store"
+      ],
+      "is_weak_signal": false,
+      "weak_signal_reason": null,
+      "exemplar_quotes": [
+        {
+          "text": "your customer support is the worst",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "blinkit company sucks",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "Bad customer service",
+          "source": "app_store",
+          "source_url": "https://apps.apple.com/in/app/blinkit/id960335206"
+        }
+      ]
+    },
+    {
+      "theme_name": "Hidden Charges and Fees",
+      "description": "Customers are concerned about the hidden charges and fees, such as surge charges, handling charges, and delivery charges, which they feel are unfair and excessive.",
+      "barrier": "price_perception",
+      "evidence_count": 3,
+      "source_types": [
+        "app_store",
+        "play_store"
+      ],
+      "is_weak_signal": false,
+      "weak_signal_reason": null,
+      "exemplar_quotes": [
+        {
+          "text": "Stating free delivery above 199 but making some other reason like surge charge etc and making sure to take the money from customer",
+          "source": "app_store",
+          "source_url": "https://apps.apple.com/in/app/blinkit/id960335206"
+        },
+        {
+          "text": "They added surcharge 100 plus delivery 30 plus handling 12 for milk costing 24 rupees",
+          "source": "app_store",
+          "source_url": "https://apps.apple.com/in/app/blinkit/id960335206"
+        },
+        {
+          "text": "handling charges for what, also I see too many times fresh vegetables or fruits aren't delivered and are priced very premium",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        }
+      ]
+    }
+  ],
+  "themes_weak": [
+    {
+      "theme_name": "Damaged or Poor-Quality Products",
+      "description": "Customers received products that were damaged, broken, or of poor quality, including expired or rotten items.",
+      "barrier": "trust_quality",
+      "evidence_count": 15,
+      "source_types": [
+        "play_store"
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Supported by only 1 source type (needs triangulation).",
+      "exemplar_quotes": [
+        {
+          "text": "i received exact expired product",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "I received a damaged/poor-quality product",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "The free storage container included with my order arrived broken",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        }
+      ]
+    },
+    {
+      "theme_name": "Incorrect or Missing Items",
+      "description": "Customers received incorrect items, missing parts, or items that did not match the description.",
+      "barrier": "trust_quality",
+      "evidence_count": 4,
+      "source_types": [
+        "play_store"
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Supported by only 1 source type (needs triangulation).",
+      "exemplar_quotes": [
+        {
+          "text": "They send wrong item",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "koi bhi mehenga product mt kharidna bcz agr part missing hue to ye apki zimewari hogi",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "they sent the item not even mentioned watt on box",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        }
+      ]
+    },
+    {
+      "theme_name": "Expired or Spoiled Products",
+      "description": "Customers received products that were expired, spoiled, or had a short shelf life.",
+      "barrier": "trust_quality",
+      "evidence_count": 4,
+      "source_types": [
+        "play_store"
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Supported by only 1 source type (needs triangulation).",
+      "exemplar_quotes": [
+        {
+          "text": "check the milk before delivery last time when we ordered the milk it got spoiled",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "Chefigo product sent expired date",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "Received stale and sour mother dairy paneer",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        }
+      ]
+    },
+    {
+      "theme_name": "Lack of Trust and Poor Service",
+      "description": "Customers expressed a lack of trust in the service due to poor quality products, damaged items, and unhelpful customer support.",
+      "barrier": "trust_quality",
+      "evidence_count": 5,
+      "source_types": [
+        "play_store"
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Supported by only 1 source type (needs triangulation).",
+      "exemplar_quotes": [
+        {
+          "text": "the app is not trust worthy",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "they don't return any damaged goods",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "there is no refund and refund policy",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        }
+      ]
+    },
+    {
+      "theme_name": "Quality Control Issues",
+      "description": "Customers experienced issues with the quality of products, including fruits and vegetables, and the overall quality control of the service.",
+      "barrier": "trust_quality",
+      "evidence_count": 10,
+      "source_types": [
+        "play_store"
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Supported by only 1 source type (needs triangulation).",
+      "exemplar_quotes": [
+        {
+          "text": "delivering Rotten items late often",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "it gives broken items and expired products",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "fresh items were not fresh at all",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        }
+      ]
+    },
+    {
+      "theme_name": "Delivery Issues",
+      "description": "Customers are experiencing problems with deliveries, including late or missing orders, poor delivery personnel behavior, and incorrect orders.",
+      "barrier": "other_emergent",
+      "evidence_count": 37,
+      "source_types": [
+        "play_store"
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Supported by only 1 source type (needs triangulation).",
+      "exemplar_quotes": [
+        {
+          "text": "The delivery person was highly unprofessional and rude",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "does not do anything my product seal was damaged",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "15 minutes me ambulance aayegi to koi delivery partner agr jayeda ghayal ho gya to",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        }
+      ]
+    },
+    {
+      "theme_name": "Product Quality and Refund Issues",
+      "description": "Customers are experiencing problems with product quality, including damaged or expired products, and difficulties with refunds.",
+      "barrier": "other_emergent",
+      "evidence_count": 25,
+      "source_types": [
+        "play_store"
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Supported by only 1 source type (needs triangulation).",
+      "exemplar_quotes": [
+        {
+          "text": "The free storage container included with my order arrived broken",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "But I won't give it a 4 star review cause it's not available in my area",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "I am not able to open my need help section and complain about the rotten, expired or damaged products",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        }
+      ]
+    },
+    {
+      "theme_name": "App and Payment Issues",
+      "description": "Customers are experiencing problems with the app, including difficulties with ordering, payment, and refunds.",
+      "barrier": "other_emergent",
+      "evidence_count": 4,
+      "source_types": [
+        "play_store"
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Supported by only 1 source type (needs triangulation).",
+      "exemplar_quotes": [
+        {
+          "text": "blinkit is not allowing me any payment option to place order",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "All Services Good but Delivery Partner Live Location Update second to second",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "aap har order par cash on delivery kardo",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        }
+      ]
+    },
+    {
+      "theme_name": "High Delivery Charges",
+      "description": "Customers feel that the delivery charges are too high and excessive, which is a major concern for them.",
+      "barrier": "price_perception",
+      "evidence_count": 12,
+      "source_types": [
+        "play_store"
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Supported by only 1 source type (needs triangulation).",
+      "exemplar_quotes": [
+        {
+          "text": "delivery charges are highest",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "you can't charge Rs 45 for delivery charge",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "i takes 25 ruppes on delivery charges",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        }
+      ]
+    },
+    {
+      "theme_name": "High Product Prices",
+      "description": "Customers feel that the product prices are too high and not competitive, which is a major concern for them.",
+      "barrier": "price_perception",
+      "evidence_count": 4,
+      "source_types": [
+        "play_store"
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Supported by only 1 source type (needs triangulation).",
+      "exemplar_quotes": [
+        {
+          "text": "Prices are a little bit higher",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "products pricess are very high",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "some items can be slightly more expensive than local stores, and occasionally products may be out of stock",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        }
+      ]
+    },
+    {
+      "theme_name": "Lack of Offers and Discounts",
+      "description": "Customers feel that there are not enough offers and discounts available, which is a major concern for them.",
+      "barrier": "price_perception",
+      "evidence_count": 2,
+      "source_types": [
+        "play_store"
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Less than 3 evidence items.",
+      "exemplar_quotes": [
+        {
+          "text": "I rarely receive good offers or discount coupons",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "Fewer offers compared to Instamart and Big Basket",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        }
+      ]
+    },
+    {
+      "theme_name": "Delivery Charge Thresholds",
+      "description": "Customers are concerned about the minimum order value required for free delivery, which they feel is too high.",
+      "barrier": "price_perception",
+      "evidence_count": 1,
+      "source_types": [
+        "play_store"
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Less than 3 evidence items.",
+      "exemplar_quotes": [
+        {
+          "text": "they take minimum ₹200 item for free delivery",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        }
+      ]
+    },
+    {
+      "theme_name": "Insufficient Options",
+      "description": "Users feel that the platform lacks variety in its product offerings, with some items being out of stock or not available at all.",
+      "barrier": "assortment_gap",
+      "evidence_count": 3,
+      "source_types": [
+        "play_store"
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Supported by only 1 source type (needs triangulation).",
+      "exemplar_quotes": [
+        {
+          "text": "They need to provide more options and keep more stock of essential items",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "option variety ki kami hai",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "no white monster available at the store from a longggg time",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        }
+      ]
+    },
+    {
+      "theme_name": "Stock Management Issues",
+      "description": "Users experience difficulties due to the platform's inability to maintain adequate stock levels, leading to out-of-stock situations.",
+      "barrier": "assortment_gap",
+      "evidence_count": 2,
+      "source_types": [
+        "play_store"
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Less than 3 evidence items.",
+      "exemplar_quotes": [
+        {
+          "text": "some items can be slightly more expensive than local stores, and occasionally products may be out of stock",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        },
+        {
+          "text": "they need to maintain stocks",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        }
+      ]
+    },
+    {
+      "theme_name": "Missing Product Details",
+      "description": "Lack of specific product information, such as expiry dates.",
+      "barrier": "missing_information",
+      "evidence_count": 1,
+      "source_types": [
+        "play_store"
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Less than 3 evidence items.",
+      "exemplar_quotes": [
+        {
+          "text": "the expiry date was misplaced",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        }
+      ]
+    },
+    {
+      "theme_name": "Insufficient Payment Options",
+      "description": "Inability to view or select certain payment methods, like cash on delivery.",
+      "barrier": "missing_information",
+      "evidence_count": 1,
+      "source_types": [
+        "play_store"
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Less than 3 evidence items.",
+      "exemplar_quotes": [
+        {
+          "text": "it was not showing cash on delivery option",
+          "source": "play_store",
+          "source_url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp"
+        }
+      ]
+    }
+  ],
+  "hypothesis_scorecard": [
+    {
+      "hypothesis_id": "H1_habit_loop",
+      "findings": [
+        "No direct evidence supports the habit loop hypothesis as the primary reason for repeated purchases from the same categories.",
+        "No direct evidence supports the habit loop hypothesis as a significant factor in shopping behavior."
+      ],
+      "evidence_strength": "weak"
+    },
+    {
+      "hypothesis_id": "H2_low_awareness",
+      "findings": [
+        "There is limited evidence to suggest that low awareness of available categories is a significant barrier to exploration."
+      ],
+      "evidence_strength": "weak"
+    },
+    {
+      "hypothesis_id": "H3_trust_quality",
+      "findings": [
+        "Trust and quality concerns are significant barriers to exploring new categories.",
+        "Trust and quality concerns are significant frustrations in the shopping experience.",
+        "Trust and quality concerns are significant unmet needs in the shopping experience."
+      ],
+      "evidence_strength": "strong"
+    },
+    {
+      "hypothesis_id": "H4_discovery_friction",
+      "findings": [
+        "There is no direct evidence to support the hypothesis that discovery friction is a significant issue in product discovery."
+      ],
+      "evidence_strength": "weak"
+    },
+    {
+      "hypothesis_id": "H5_missing_information",
+      "findings": [
+        "The lack of specific product information, such as expiry dates, is a concern for users."
+      ],
+      "evidence_strength": "moderate"
+    },
+    {
+      "hypothesis_id": "emergent",
+      "findings": [
+        "No direct evidence supports the identification of specific user segments more likely to experiment with new categories."
+      ],
+      "evidence_strength": "weak"
+    }
+  ],
+  "research_questions": [
+    {
+      "id": "Q1",
+      "title": "Users Repeat Purchase Due to Familiarity",
+      "answer": "There is no direct evidence in the provided themes that explains why users repeatedly buy from the same categories. However, it can be inferred that users may stick to familiar categories due to trust and quality issues with new or unexplored categories. The themes highlight various trust and quality concerns, such as damaged or poor-quality products, incorrect or missing items, and expired or spoiled products, which might discourage users from exploring new categories.",
+      "supporting_themes": []
+    },
+    {
+      "id": "Q2",
+      "title": "Exploration Barriers",
+      "answer": "The themes suggest that trust and quality concerns are significant barriers to exploring new categories. Users express dissatisfaction with the quality of products and services, which might prevent them from trying new categories. Additionally, the lack of information about products, such as expiry dates, could also hinder exploration.",
+      "supporting_themes": [
+        "Damaged or Poor-Quality Products",
+        "Expired or Spoiled Products",
+        "Incorrect or Missing Items",
+        "Missing Product Details"
+      ]
+    },
+    {
+      "id": "Q3",
+      "title": "Product Discovery",
+      "answer": "The provided themes do not offer clear insights into how users discover products today. However, it can be inferred that users might rely on the app's interface and product listings to discover new products.",
+      "supporting_themes": []
+    },
+    {
+      "id": "Q4",
+      "title": "Habits in Shopping Behavior",
+      "answer": "The themes do not provide direct evidence on the role of habits in shopping behavior. However, it can be inferred that users may develop habits based on their experiences with the app and the quality of products and services.",
+      "supporting_themes": []
+    },
+    {
+      "id": "Q5",
+      "title": "Information Needed for New Categories",
+      "answer": "Users need more information about products, such as expiry dates, to feel comfortable trying new categories. The lack of such information can be a barrier to exploration.",
+      "supporting_themes": [
+        "Missing Product Details"
+      ]
+    },
+    {
+      "id": "Q6",
+      "title": "Frustrations in the Shopping Experience",
+      "answer": "Users experience frustrations with the shopping experience, including poor product quality, incorrect or missing items, and difficulties with customer support. These frustrations can lead to a lack of trust in the service and discourage users from exploring new categories.",
+      "supporting_themes": [
+        "Damaged or Poor-Quality Products",
+        "Expired or Spoiled Products",
+        "Incorrect or Missing Items"
+      ]
+    },
+    {
+      "id": "Q7",
+      "title": "User Segments More Likely to Experiment",
+      "answer": "The provided themes do not offer clear insights into which user segments are more likely to experiment with new categories. However, it can be inferred that users who are less risk-averse and more open to new experiences might be more likely to explore new categories.",
+      "supporting_themes": []
+    },
+    {
+      "id": "Q8",
+      "title": "Unmet Needs in the Shopping Experience",
+      "answer": "Users have unmet needs in the shopping experience, including the need for better product quality, more accurate product information, and improved customer support. These unmet needs can lead to frustrations and a lack of trust in the service.",
+      "supporting_themes": [
+        "Damaged or Poor-Quality Products",
+        "Expired or Spoiled Products",
+        "Incorrect or Missing Items"
+      ]
+    }
+  ],
+  "validation": {
+    "traceability_passed": true,
+    "orphan_insights": [],
+    "null_finding_insights": [
+      "Users Repeat Purchase Due to Familiarity",
+      "Product Discovery",
+      "Habits in Shopping Behavior",
+      "User Segments More Likely to Experiment"
+    ],
+    "quotes_checked": 71,
+    "quotes_without_url": 0
+  },
+  "channel_alternatives": {
+    "amazon": 3,
+    "zepto": 3,
+    "flipkart": 3,
+    "other platforms": 2,
+    "flipkart minutes": 1,
+    "swiggy instamart": 1,
+    "local stores": 1,
+    "flip": 1,
+    "zep": 1,
+    "swig": 1
+  },
+  "categories_mentioned": {
+    "groceries": 11,
+    "fruits": 4,
+    "milk": 3,
+    "products": 3,
+    "ice cream": 3,
+    "vegetables": 3,
+    "electronics": 2,
+    "rice": 1,
+    "beverage": 1,
+    "pet food": 1
+  }
+}
