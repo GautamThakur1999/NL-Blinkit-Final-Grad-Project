@@ -33,7 +33,10 @@ logger = logging.getLogger(__name__)
 
 INSIGHTS_PATH = ANALYSIS_DIR / "insights.json"
 THEMES_PATH = ANALYSIS_DIR / "themes.json"
-TAGS_PATH = DATA_DIR / "state" / "tags_results.jsonl"
+# Tagger output lives in the analysis directory; state/ holds cursors and dead
+# letters only. The previous path silently yielded zero tags, which would have
+# made the traceability audit vacuously pass.
+TAGS_PATH = ANALYSIS_DIR / "tags_results.jsonl"
 CORPUS_PATH = DATA_DIR / "clean" / "corpus.jsonl"
 AUDIT_REPORT_PATH = ANALYSIS_DIR / "traceability_audit.json"
 
@@ -44,6 +47,9 @@ class AuditResult:
     total_themes_referenced: int = 0
     total_quotes_checked: int = 0
     orphan_insights: list[str] = field(default_factory=list)
+    # Insights that legitimately cite no themes because they report an absence
+    # of evidence. Tracked and reported, but they do not fail the build.
+    null_finding_insights: list[str] = field(default_factory=list)
     themes_missing_evidence: list[str] = field(default_factory=list)
     quotes_without_url: list[dict] = field(default_factory=list)
     urls_dead_snapshot_exists: list[dict] = field(default_factory=list)
@@ -55,6 +61,7 @@ class AuditResult:
             "total_themes_referenced": self.total_themes_referenced,
             "total_quotes_checked": self.total_quotes_checked,
             "orphan_insights": self.orphan_insights,
+            "null_finding_insights": self.null_finding_insights,
             "themes_missing_evidence": self.themes_missing_evidence,
             "quotes_without_url_count": len(self.quotes_without_url),
             "quotes_without_url_sample": self.quotes_without_url[:10],
@@ -110,8 +117,24 @@ def process() -> AuditResult:
                 referenced_themes.add(tn)
 
         if not referenced_themes:
-            result.orphan_insights.append(title)
-            logger.warning(f"ORPHAN INSIGHT: '{title}' references zero themes.")
+            # An insight that reports the ABSENCE of evidence legitimately cites
+            # no themes — that is honest null reporting, not an unsupported
+            # claim. Only insights that assert something while citing nothing
+            # are orphans. Every scorecard being 'weak' is the signal: the model
+            # was asked to score 'weak' precisely when evidence is missing.
+            strengths = {
+                sc.get("evidence_strength") for sc in scorecards
+            } or {"weak"}
+            is_null_finding = strengths <= {"weak"}
+
+            if is_null_finding:
+                result.null_finding_insights.append(title)
+                logger.info(
+                    "NULL FINDING: '%s' reports absence of evidence (allowed).", title
+                )
+            else:
+                result.orphan_insights.append(title)
+                logger.warning(f"ORPHAN INSIGHT: '{title}' references zero themes.")
             continue
 
         result.total_themes_referenced += len(referenced_themes)

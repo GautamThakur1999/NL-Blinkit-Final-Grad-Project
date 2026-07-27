@@ -1,0 +1,459 @@
+{
+  "protocol": {
+    "sample_fraction": 0.12,
+    "agreement_threshold": 0.8,
+    "total_tagged_items": 220,
+    "sample_size": 27,
+    "sampling_method": "stratified across batches (not just early items)",
+    "pre_committed_rule": "If agreement < 80%, revise taxonomy/prompt, re-tag, re-check, and report both rounds."
+  },
+  "items": [
+    {
+      "item_id": "play-13f51407-b4c1-4d8b-a157-8cb96cb3cb81",
+      "text_raw": "i received exact expired product",
+      "context": "App Version: 18.9.3",
+      "source": "play_store",
+      "ai_barriers": [
+        "trust_quality"
+      ],
+      "ai_sentiment": "negative",
+      "ai_key_quote": "i received exact expired product",
+      "ai_categories": [],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-a8a7ecac-1aa5-4063-8075-33077bc4e06d",
+      "text_raw": "delivering Rotten items late often.",
+      "context": "App Version: 18.9.3",
+      "source": "play_store",
+      "ai_barriers": [
+        "trust_quality"
+      ],
+      "ai_sentiment": "negative",
+      "ai_key_quote": "delivering Rotten items late often",
+      "ai_categories": [],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-a5bed6bd-3791-4866-8337-16e3ce0efb99",
+      "text_raw": "I am extremely disappointed with my Blinkit experience. The free storage container included with my order arrived broken. A damaged product should never be delivered to a customer, whether it is a free item or a paid one. What made the experience even worse was the poor customer support. My replacement request was denied simply because the main cat food package had already been opened. This is completely unfair, as the issue is with the broken container, not the cat food. Mail sent, kindly reply",
+      "context": "App Version: 18.9.3",
+      "source": "play_store",
+      "ai_barriers": [
+        "trust_quality",
+        "other_emergent"
+      ],
+      "ai_sentiment": "negative",
+      "ai_key_quote": "The free storage container included with my order arrived broken",
+      "ai_categories": [
+        "pet food"
+      ],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "app-14332495237",
+      "text_raw": "Speedy delivery\n\nGood range of products & speedy delivery. Return & refund too is instant",
+      "context": "App Version: 18.70.0",
+      "source": "app_store",
+      "ai_barriers": [
+        "none"
+      ],
+      "ai_sentiment": "positive",
+      "ai_key_quote": "none",
+      "ai_categories": [
+        "groceries"
+      ],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-95fa3dc3-2fe2-4e4f-8431-0209375390cc",
+      "text_raw": "I add soya chips, for avoiding delivery charges I add other item, at the time of payment they remove soya chips and add delivery charges. the main product I did not get",
+      "context": "App Version: 18.9.3",
+      "source": "play_store",
+      "ai_barriers": [
+        "other_emergent"
+      ],
+      "ai_sentiment": "negative",
+      "ai_key_quote": "they remove soya chips and add delivery charges",
+      "ai_categories": [
+        "soya chips"
+      ],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-4025f433-3bd0-4c27-ae79-152563fcd21a",
+      "text_raw": "good service only 1 suggestion check the milk before delivery last time when we ordered the milk it got spoiled",
+      "context": "App Version: 18.9.3",
+      "source": "play_store",
+      "ai_barriers": [
+        "trust_quality"
+      ],
+      "ai_sentiment": "mixed",
+      "ai_key_quote": "check the milk before delivery last time when we ordered the milk it got spoiled",
+      "ai_categories": [
+        "milk"
+      ],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-88b5cef7-36b2-41d8-ba53-3832dd9468a6",
+      "text_raw": "Blinkit is very convenient for quick grocery and daily essentials delivery. The app is easy to use, delivery is usually fast, and I can find most items I need. A great option when you need something urgently without going to the store.",
+      "context": "App Version: 18.7.0",
+      "source": "play_store",
+      "ai_barriers": [
+        "none"
+      ],
+      "ai_sentiment": "positive",
+      "ai_key_quote": "none",
+      "ai_categories": [
+        "groceries",
+        "daily essentials"
+      ],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-928bda4d-315f-479e-b476-4eddfc1031a0",
+      "text_raw": "delivery charges more",
+      "context": "App Version: 18.9.3",
+      "source": "play_store",
+      "ai_barriers": [
+        "price_perception"
+      ],
+      "ai_sentiment": "negative",
+      "ai_key_quote": "delivery charges more",
+      "ai_categories": [],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-dcb4b837-a769-4126-b963-75b6158c31d2",
+      "text_raw": "Quick home delivery",
+      "context": "",
+      "source": "play_store",
+      "ai_barriers": [
+        "none"
+      ],
+      "ai_sentiment": "positive",
+      "ai_key_quote": "none",
+      "ai_categories": [],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-ac7f0343-4b26-457d-8d10-801431813a50",
+      "text_raw": "blinkit good fast delivery 👍🏻",
+      "context": "",
+      "source": "play_store",
+      "ai_barriers": [
+        "none"
+      ],
+      "ai_sentiment": "positive",
+      "ai_key_quote": "none",
+      "ai_categories": [],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-b183c391-5867-4fb8-bbd6-d7db88f31d13",
+      "text_raw": "very fast delivery but delivery charge can sometimes be high",
+      "context": "App Version: 18.7.0",
+      "source": "play_store",
+      "ai_barriers": [
+        "price_perception"
+      ],
+      "ai_sentiment": "mixed",
+      "ai_key_quote": "delivery charge can sometimes be high",
+      "ai_categories": [],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-75f212bd-e75e-41a3-aae9-db704d931f79",
+      "text_raw": "mujhe blinkit se order mangane main bhot aacha result mila or delivery boys bhi bhot limit main baat karte hai! thank you blinkit ❤👍",
+      "context": "App Version: 18.9.3",
+      "source": "play_store",
+      "ai_barriers": [
+        "none"
+      ],
+      "ai_sentiment": "positive",
+      "ai_key_quote": "none",
+      "ai_categories": [],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-81832209-9f36-43ea-a1b4-9be8eaf50e1e",
+      "text_raw": "delivery service is not best",
+      "context": "App Version: 18.13.0",
+      "source": "play_store",
+      "ai_barriers": [
+        "other_emergent"
+      ],
+      "ai_sentiment": "negative",
+      "ai_key_quote": "delivery service is not best",
+      "ai_categories": [],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-0be0f54b-cad6-4985-a17f-aaed32532a2c",
+      "text_raw": "please improve the delivery experience despite exact house location on map the guy goes somewhere else , calls me 10 times and ask the location, wrong delivery twice a month but the rest is 10/10 definitely a blink and it's on your door step within 10min love that support team are quick too",
+      "context": "App Version: 18.9.3",
+      "source": "play_store",
+      "ai_barriers": [
+        "other_emergent"
+      ],
+      "ai_sentiment": "mixed",
+      "ai_key_quote": "please improve the delivery experience",
+      "ai_categories": [],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-4bf3ad81-3303-48a0-9501-261155a773d7",
+      "text_raw": "delivery is good on time , best service thanks blinkit",
+      "context": "App Version: 18.9.3",
+      "source": "play_store",
+      "ai_barriers": [
+        "none"
+      ],
+      "ai_sentiment": "positive",
+      "ai_key_quote": "none",
+      "ai_categories": [],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-33b7eadb-a56d-49b5-aa3a-18e48467fc11",
+      "text_raw": "got my orders just in minutes.i really loved it. all the delivery mans are also so nice and kind",
+      "context": "App Version: 18.9.3",
+      "source": "play_store",
+      "ai_barriers": [
+        "none"
+      ],
+      "ai_sentiment": "positive",
+      "ai_key_quote": "none",
+      "ai_categories": [],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-2b82652a-3e99-4067-abd1-799b42279cc1",
+      "text_raw": "the delivery is good but sometimes the parcel goes to wrong place but most of the times its the bestest delivery and various types of options are also there",
+      "context": "App Version: 18.9.3",
+      "source": "play_store",
+      "ai_barriers": [
+        "other_emergent"
+      ],
+      "ai_sentiment": "mixed",
+      "ai_key_quote": "the parcel goes to wrong place",
+      "ai_categories": [],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-55b83e30-b6bd-415d-ad95-6dd5df7286ca",
+      "text_raw": "better than other delivery app",
+      "context": "App Version: 18.9.3",
+      "source": "play_store",
+      "ai_barriers": [
+        "none"
+      ],
+      "ai_sentiment": "positive",
+      "ai_key_quote": "none",
+      "ai_categories": [],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-c3cf84cf-bd9f-40df-9365-fbcd100cc10a",
+      "text_raw": "bestest help great delivery experience",
+      "context": "App Version: 18.9.3",
+      "source": "play_store",
+      "ai_barriers": [
+        "none"
+      ],
+      "ai_sentiment": "positive",
+      "ai_key_quote": "none",
+      "ai_categories": [],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-5f5a79fa-14c7-45bf-aebc-d554eca66bab",
+      "text_raw": "Orders on time, reasonable rates, humble delivery agents and literally last moment saver",
+      "context": "App Version: 18.9.3",
+      "source": "play_store",
+      "ai_barriers": [
+        "none"
+      ],
+      "ai_sentiment": "positive",
+      "ai_key_quote": "none",
+      "ai_categories": [],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-8c063063-c6fc-47dc-8f2b-79397fd53d72",
+      "text_raw": "delivery at the time",
+      "context": "App Version: 18.9.3",
+      "source": "play_store",
+      "ai_barriers": [
+        "none"
+      ],
+      "ai_sentiment": "positive",
+      "ai_key_quote": "none",
+      "ai_categories": [],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-6913d47a-512d-40e8-b23e-4e31a5a1ed79",
+      "text_raw": "\"Lightning-fast delivery and perfectly packed items. 5 stars for saving my day!\" \"Faster than my thoughts! Flawless service and communication.\" \"Top-notch service! My groceries arrived in pristine condition, well before the estimated time.\" \"Consistency at its best. Always a 5-star experience with Blinkit!\"",
+      "context": "App Version: 18.9.3",
+      "source": "play_store",
+      "ai_barriers": [
+        "none"
+      ],
+      "ai_sentiment": "positive",
+      "ai_key_quote": "none",
+      "ai_categories": [],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-774cb769-0843-48a8-89ee-556c5807fcea",
+      "text_raw": "today I have ordered a charger once I have checked in my cell phone it is not working properly once I have reserve request and blanket customer care he said there is no refund and refund policy this is your waste of services no politerately services worst of services your guys app providing to the customers I suggest each and everyone person don't install blanket I suggest try another platform which one is providing the bus service to the customers worst of services very poor services poor. 😡",
+      "context": "App Version: 18.9.3",
+      "source": "play_store",
+      "ai_barriers": [
+        "trust_quality",
+        "other_emergent"
+      ],
+      "ai_sentiment": "negative",
+      "ai_key_quote": "there is no refund and refund policy",
+      "ai_categories": [
+        "electronics"
+      ],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-94193d33-bff9-4768-91de-b7e01c4b415e",
+      "text_raw": "there is no support system on blinkit",
+      "context": "App Version: 18.9.3",
+      "source": "play_store",
+      "ai_barriers": [
+        "other_emergent"
+      ],
+      "ai_sentiment": "negative",
+      "ai_key_quote": "there is no support system on blinkit",
+      "ai_categories": [],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-cf2564b9-06d2-4a87-8b53-d20b01c1ce4e",
+      "text_raw": "fast delivery thank you for the fast service",
+      "context": "",
+      "source": "play_store",
+      "ai_barriers": [
+        "none"
+      ],
+      "ai_sentiment": "positive",
+      "ai_key_quote": "none",
+      "ai_categories": [],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-f608c6d9-ff04-4402-b031-44565206613b",
+      "text_raw": "delivery agent is not good behave badly",
+      "context": "App Version: 18.9.3",
+      "source": "play_store",
+      "ai_barriers": [
+        "other_emergent"
+      ],
+      "ai_sentiment": "negative",
+      "ai_key_quote": "delivery agent is not good behave badly",
+      "ai_categories": [],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    },
+    {
+      "item_id": "play-713d9a31-1411-43fd-b951-8d7e06dd1120",
+      "text_raw": "very bad experience with blinkit I already paid for my order but I never received it it's been a long time and I still haven't received my refund this is completely unacceptable customer support was not helpful and the delivery boy was not picking up my calls this is very bad..",
+      "context": "App Version: 18.9.3",
+      "source": "play_store",
+      "ai_barriers": [
+        "other_emergent"
+      ],
+      "ai_sentiment": "negative",
+      "ai_key_quote": "I already paid for my order but I never received it",
+      "ai_categories": [],
+      "human_agrees_barriers": null,
+      "human_agrees_sentiment": null,
+      "human_agrees_quote": null,
+      "human_notes": ""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "total_insights": 8,
+  "total_themes_referenced": 11,
+  "total_quotes_checked": 71,
+  "orphan_insights": [],
+  "null_finding_insights": [
+    "Users Repeat Purchase Due to Familiarity",
+    "Product Discovery",
+    "Habits in Shopping Behavior",
+    "User Segments More Likely to Experiment"
+  ],
+  "themes_missing_evidence": [],
+  "quotes_without_url_count": 0,
+  "quotes_without_url_sample": [],
+  "urls_dead_snapshot_exists_count": 0,
+  "passed": true
+}

@@ -113,13 +113,34 @@ class ThemeEvidence(BaseModel):
 class Theme(BaseModel):
     theme_name: str
     description: str
-    barrier: str
-    evidence: list[ThemeEvidence]
-    is_weak_signal: bool
+    # Set by the caller after parsing, not by the model.
+    barrier: str = ""
+    evidence: list[ThemeEvidence] = []
+    # Determined by the admission rules in code, not by the model.
+    is_weak_signal: bool = False
     weak_signal_reason: str | None = None
 
 class ThemerResponse(BaseModel):
     themes: list[Theme]
+
+
+class ThemeDraft(BaseModel):
+    """
+    What the clustering model is actually asked to return.
+
+    It supplies only the grouping (which item ids belong together); the full
+    evidence records are reconstructed locally. Making the model echo back every
+    quote, url and flag would multiply output tokens for zero added information
+    — and risks it altering quotes, which would break the verbatim guarantee.
+    """
+
+    theme_name: str
+    description: str
+    item_ids: list[str]
+
+
+class ThemerDraftResponse(BaseModel):
+    themes: list[ThemeDraft]
 
 class InsightScorecard(BaseModel):
     hypothesis_id: Literal["H1_habit_loop", "H2_low_awareness", "H3_trust_quality", "H4_discovery_friction", "H5_missing_information", "emergent"]

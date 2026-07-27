@@ -1,0 +1,29 @@
+{
+  "traceability_audit": {
+    "passed": true,
+    "orphan_insights": 0,
+    "themes_missing_evidence": 0,
+    "quotes_without_url_count": 0
+  },
+  "spotcheck": {
+    "sample_size": 27,
+    "reviewed_count": 0,
+    "status": "awaiting human review"
+  },
+  "counter_evidence": {
+    "total_items_scanned": 0,
+    "total_contradictions_found": 0,
+    "cross_model_disagreement_rate": "N/A"
+  },
+  "themes": {
+    "total_themes": 18,
+    "weak_signal_count": 16,
+    "single_source_flag_count": 16
+  },
+  "llm_failures": {
+    "total_dead_lettered_items": 285,
+    "dead_letter_files": [
+      "relevance_dead_letters.jsonl"
+    ]
+  }
+}

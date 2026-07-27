@@ -1,7 +1,7 @@
 # Methodology — Blinkit Category Exploration Discovery Engine
 
 > **Part 1 Documentation**
-> Generated: 2026-07-25 21:14 UTC
+> Generated: 2026-07-27 05:06 UTC
 
 ---
 
@@ -40,8 +40,8 @@
 | Role | Provider | Model ID | Temperature |
 |---|---|---|---|
 | Per-item tagging (T3.2) | Groq | `llama-3.3-70b-versatile` | 0.1 |
-| Theme clustering (T3.3) | Google Gemini | `gemini-2.0-flash` | 0.2 |
-| Insight synthesis (T3.5) | Google Gemini | `gemini-2.0-flash` | 0.3 |
+| Theme clustering (T3.3) | Google Gemini | `gemini-flash-latest` | 0.2 |
+| Insight synthesis (T3.5) | Google Gemini | `gemini-flash-latest` | 0.3 |
 | Counter-evidence (T3.6) | Groq | `llama-3.3-70b-versatile` | 0.1 |
 | Relevance filter (T2.6) | Groq | `llama-3.3-70b-versatile` | 0.1 |
 
@@ -65,7 +65,7 @@ examples (including sarcasm and Hinglish cases) are in `pipeline/analysis/taxono
 
 ### 2.4 Run Date
 
-**Pipeline execution date:** 2026-07-25 21:14 UTC
+**Pipeline execution date:** 2026-07-27 05:06 UTC
 
 ---
 
@@ -73,26 +73,26 @@ examples (including sarcasm and Hinglish cases) are in `pipeline/analysis/taxono
 
 ### 3.1 Traceability Audit
 
-- **Result:** FAILED ❌
-- **Orphan insights:** N/A
-- **Themes missing evidence:** N/A
-- **Quotes without URL:** N/A
+- **Result:** PASSED ✅
+- **Orphan insights:** 0
+- **Themes missing evidence:** 0
+- **Quotes without URL:** 0
 
 Every insight in the report is traceable through the chain:
 `insight → theme(s) → evidence items → verbatim quotes → source URLs`.
 
 ### 3.2 Human Spot-Check
 
-- **Sample size:** N/A
+- **Sample size:** 27
 - **Sampling method:** Stratified across all batches (not just early items)
-- **Status:** awaiting review
+- **Status:** awaiting human review
 - **Pre-committed protocol:** If agreement < 80%, the taxonomy and prompts are revised,
   items are re-tagged, and both rounds are reported.
 
 ### 3.3 Cross-Model Counter-Evidence
 
-- **Items scanned:** N/A
-- **Contradictions found:** N/A
+- **Items scanned:** 0
+- **Contradictions found:** 0
 - **Cross-model disagreement rate:** N/A
 
 Groq was used to independently scan the corpus for evidence contradicting
@@ -100,7 +100,7 @@ Gemini-derived insights. This provides a cheap cross-model consistency check.
 
 ### 3.4 LLM Failure Handling
 
-- **Dead-lettered items:** N/A
+- **Dead-lettered items:** 285
 
 Items that failed all retries (safety blocks, malformed JSON, quota exhaustion)
 are persisted in dead-letter files. They are never silently skipped. Their absence

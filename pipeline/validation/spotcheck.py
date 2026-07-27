@@ -28,7 +28,8 @@ from pipeline.common import (
 
 logger = logging.getLogger(__name__)
 
-TAGS_PATH = DATA_DIR / "state" / "tags_results.jsonl"
+# See note in validation/audit.py — tagger output is in the analysis directory.
+TAGS_PATH = ANALYSIS_DIR / "tags_results.jsonl"
 CORPUS_PATH = DATA_DIR / "clean" / "corpus.jsonl"
 SPOTCHECK_PATH = ANALYSIS_DIR / "spotcheck_sample.json"
 

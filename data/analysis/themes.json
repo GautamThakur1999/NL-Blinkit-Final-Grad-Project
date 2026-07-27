@@ -1,0 +1,1167 @@
+{
+  "themes": [
+    {
+      "theme_name": "Damaged or Poor-Quality Products",
+      "description": "Customers received products that were damaged, broken, or of poor quality, including expired or rotten items.",
+      "barrier": "trust_quality",
+      "evidence": [
+        {
+          "item_id": "play-13f51407-b4c1-4d8b-a157-8cb96cb3cb81",
+          "quote": "i received exact expired product",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-a033b2b7-fa9f-4a9d-b5e2-e2bd2184a72a",
+          "quote": "I received a damaged/poor-quality product",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-a5bed6bd-3791-4866-8337-16e3ce0efb99",
+          "quote": "The free storage container included with my order arrived broken",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-f4d5cf57-aacc-465a-8f85-6004b0b7995c",
+          "quote": "i received broken eggs",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-8c30fc3b-b684-49b2-b860-13b9185a0d32",
+          "quote": "delivery by damaged product",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-9dc95090-7044-45a1-866e-94f572a78162",
+          "quote": "products were damaged",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-94693efa-af68-40da-8037-3db2bf7cc168",
+          "quote": "the items come very dirty sometimw item got damaged",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-5a1fcc64-7c59-45f5-975d-634295053c45",
+          "quote": "I have recieved a bad quality damaged product",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-cac6f4af-4134-4237-b187-afac97058f46",
+          "quote": "it had melted previously and had been re-frozen before delivery",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-27acf408-650f-4983-a881-d5dedbfa6578",
+          "quote": "they gave us melted ice cream",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-c66e2375-773b-4138-9ea8-164f38d61f8a",
+          "quote": "ice cream all melted",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-bd663a35-4609-43b5-9c1a-60a4720ee547",
+          "quote": "eggs tray is broken",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-ae3a715b-715a-4b55-a9d8-80e9c69b1885",
+          "quote": "some fruits and vegetables had insects in them",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-2552f5c4-e99e-4958-8a6d-183a7b65f982",
+          "quote": "The material quality is extremely poor",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-26bfbe10-6163-4c8a-a228-cfe249fd9c32",
+          "quote": "Most of the times, the products are not good",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        }
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Supported by only 1 source type (needs triangulation)."
+    },
+    {
+      "theme_name": "Incorrect or Missing Items",
+      "description": "Customers received incorrect items, missing parts, or items that did not match the description.",
+      "barrier": "trust_quality",
+      "evidence": [
+        {
+          "item_id": "play-c804d71e-ad10-454e-b2d6-d192b3b219ad",
+          "quote": "They send wrong item",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-42ac6998-6e78-4ac5-b4ae-39d85bfdc128",
+          "quote": "koi bhi mehenga product mt kharidna bcz agr part missing hue to ye apki zimewari hogi",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-853d7276-589c-4cef-982f-53c867d2aa84",
+          "quote": "they sent the item not even mentioned watt on box",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-c05f33cc-6b61-48e4-8dcc-d26fa971cea7",
+          "quote": "to my surprise I found the developer in the pack was missing",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        }
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Supported by only 1 source type (needs triangulation)."
+    },
+    {
+      "theme_name": "Expired or Spoiled Products",
+      "description": "Customers received products that were expired, spoiled, or had a short shelf life.",
+      "barrier": "trust_quality",
+      "evidence": [
+        {
+          "item_id": "play-4025f433-3bd0-4c27-ae79-152563fcd21a",
+          "quote": "check the milk before delivery last time when we ordered the milk it got spoiled",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-770c42e8-6a67-47f2-9726-60c282e966f6",
+          "quote": "Chefigo product sent expired date",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-d40ea3a2-a1f6-46db-bc85-10cb9d1c3d9c",
+          "quote": "Received stale and sour mother dairy paneer",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-0f329e83-5345-4133-a4f6-66c4bfe83237",
+          "quote": "this time milk amul gold was no gud",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        }
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Supported by only 1 source type (needs triangulation)."
+    },
+    {
+      "theme_name": "Lack of Trust and Poor Service",
+      "description": "Customers expressed a lack of trust in the service due to poor quality products, damaged items, and unhelpful customer support.",
+      "barrier": "trust_quality",
+      "evidence": [
+        {
+          "item_id": "play-db9e3f1a-1a78-4627-b455-e0d2a5d32c49",
+          "quote": "the app is not trust worthy",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-f7ae6c54-c2d1-41ea-9a09-0eadfdef0e1b",
+          "quote": "they don't return any damaged goods",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-774cb769-0843-48a8-89ee-556c5807fcea",
+          "quote": "there is no refund and refund policy",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-ddc1c085-a5ae-4fcc-8701-bb6fdf4747e4",
+          "quote": "They dont take order returns",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-061915f8-c319-47f6-b261-e48118f2f73f",
+          "quote": "worst app ever",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        }
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Supported by only 1 source type (needs triangulation)."
+    },
+    {
+      "theme_name": "Quality Control Issues",
+      "description": "Customers experienced issues with the quality of products, including fruits and vegetables, and the overall quality control of the service.",
+      "barrier": "trust_quality",
+      "evidence": [
+        {
+          "item_id": "play-a8a7ecac-1aa5-4063-8075-33077bc4e06d",
+          "quote": "delivering Rotten items late often",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-5123f73e-6dc6-415f-9c87-d3989ffb1e87",
+          "quote": "it gives broken items and expired products",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-f6fd546e-72db-4598-952d-c18b1328da1f",
+          "quote": "fresh items were not fresh at all",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-5947a4de-b343-433a-9056-145d301fc82a",
+          "quote": "they have listed a lot of low quality products",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-dc84be81-d065-4f89-a64d-8d2ddee66529",
+          "quote": "handling charges for what, also I see too many times fresh vegetables or fruits aren't delivered and are priced very premium",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-692840ba-0d41-4d58-9a6d-de73d4cd5245",
+          "quote": "they are started sending damaged and expired products",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-c3691346-0151-448c-be8d-fc81e725861d",
+          "quote": "Consistently bad supply for vegetables and fruits",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-2b68a5e0-5361-46ec-b8a7-034d7b411f9f",
+          "quote": "the expiry date was misplaced",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-94267d1f-05e0-4ecb-8c2d-7ef1997c4408",
+          "quote": "some products are damaged",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-b3729681-5e0f-40c2-9259-7d222a0c4e2a",
+          "quote": "damge maal bhejta hai",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        }
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Supported by only 1 source type (needs triangulation)."
+    },
+    {
+      "theme_name": "Poor Customer Support",
+      "description": "Customers are experiencing difficulties with customer support, including unhelpful representatives, long wait times, and unresolvable issues.",
+      "barrier": "other_emergent",
+      "evidence": [
+        {
+          "item_id": "play-460f6bae-845b-4b6c-a8e4-d41aca7b7a2e",
+          "quote": "your customer support is the worst",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-5b89746b-dfe5-44cb-b039-8ac9f967ca3f",
+          "quote": "blinkit company sucks",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "app-14331274819",
+          "quote": "Bad customer service",
+          "url": "https://apps.apple.com/in/app/blinkit/id960335206",
+          "source": "app_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-dd71cef3-9a99-4b5a-b5d6-e69b077467b3",
+          "quote": "horrible customer support, no resolution is provided and just waste time over chat",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-9e917db7-066c-43aa-89f6-e57909821688",
+          "quote": "Poor support",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-89d611b3-e1a9-4ee3-94d9-4ec048b83cf7",
+          "quote": "Very poor customer support",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-13ea5e4c-bd19-4f36-bd08-c64f4bb564b9",
+          "quote": "oder bhi nhi ho rha hai or na hi customer support mil rha hai",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-4556c6fd-285b-4fdf-973a-8884f48f457c",
+          "quote": "worst service from ivr chat bot",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-2a5db986-55b1-4fa0-b26e-fecaeeb34fde",
+          "quote": "help center are poor",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-94193d33-bff9-4768-91de-b7e01c4b415e",
+          "quote": "there is no support system on blinkit",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        }
+      ],
+      "is_weak_signal": false,
+      "weak_signal_reason": null
+    },
+    {
+      "theme_name": "Delivery Issues",
+      "description": "Customers are experiencing problems with deliveries, including late or missing orders, poor delivery personnel behavior, and incorrect orders.",
+      "barrier": "other_emergent",
+      "evidence": [
+        {
+          "item_id": "play-aadaaedf-0c6c-4c78-8a8d-ecb5c5b5fabb",
+          "quote": "The delivery person was highly unprofessional and rude",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-7b49e750-8250-4783-86da-a4b37295ccf4",
+          "quote": "does not do anything my product seal was damaged",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-c003c9b9-ba25-4dd7-97bc-87087ddbbe22",
+          "quote": "15 minutes me ambulance aayegi to koi delivery partner agr jayeda ghayal ho gya to",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-88afc46e-45ee-472c-b22c-05e98d1d0d98",
+          "quote": "I ordered Mini Mogra Rice and then sent Mogra Delight",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-a033b2b7-fa9f-4a9d-b5e2-e2bd2184a72a",
+          "quote": "I received a damaged/poor-quality product",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-3f0f0147-f85f-45ab-ab75-4ba58fe79e7e",
+          "quote": "worst delivery partner fleet",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-644e0cfc-9f7d-40e5-b709-d68ab3886adc",
+          "quote": "delivery time is very high in night 1st it shows 13 minutes later it shows 23 minutes after sometime please fix it or dont take orders",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-f6a2de30-2c1c-43b4-a076-7408a157647c",
+          "quote": "bhot late delivery h tym rok dete h",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-2eb9442c-21ce-4c86-be67-8dd9e3921025",
+          "quote": "yes it's gud easy for ordering our grocery but some times partners make it late to deliver the orders",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-8b66417c-d6bb-471f-a9e0-ad872adbe111",
+          "quote": "do your delivery partner expect every address to have a lift",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-95fa3dc3-2fe2-4e4f-8431-0209375390cc",
+          "quote": "they remove soya chips and add delivery charges",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-98d526a6-5366-4e7f-a813-10d78e673d63",
+          "quote": "Mera order mere pass nhi aaya or kisi or location pr delivery kr diya",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-ea660379-0fc9-42e6-8da9-343ee27194e4",
+          "quote": "the delivery man named saravanan was shouting like a hell",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-310c839f-87ee-42d0-bac6-df1e44506732",
+          "quote": "late always",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-0be0f54b-cad6-4985-a17f-aaed32532a2c",
+          "quote": "please improve the delivery experience",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-b0b91df9-7663-45c1-86d8-f16a010a028b",
+          "quote": "Delivery boy never had change money",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-096edb29-9195-460c-b157-41b4fd7b9d80",
+          "quote": "I received my order, but the 1× Stylus Pen (Black) was missing from the package.",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-62a6d541-2eae-4d1c-8944-2b94bd167a1a",
+          "quote": "add on just ordered for a amount of 540 but they have charged 840 and their is no customer support",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-b739423b-5429-45b9-9ca2-b4854fb5eee9",
+          "quote": "worst product delivery",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-cb509cb6-44aa-46bd-8b07-0cab37757617",
+          "quote": "app is good but delivery boy are not working as app is working",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-8cc5786a-47d9-4a06-ae38-268f4ddc1e03",
+          "quote": "he couldn't so he had to wait for atleast 15 to 20 min for a single call",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-2adff9d7-425d-47ce-872e-7ffda262dac5",
+          "quote": "Not following delivery instructions",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-2b82652a-3e99-4067-abd1-799b42279cc1",
+          "quote": "the parcel goes to wrong place",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-9b074a92-e320-4ff5-80d9-22e54dc94b6c",
+          "quote": "delivery boy smashed the door so hard, no manners at all",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-06ebf5d7-27cc-44fd-9d31-37f6f8c5c6dc",
+          "quote": "very slow. no delivery partner was assigned for 15 minutes",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-557fd6d0-4d69-4021-bb6f-4727ad7abf51",
+          "quote": "very bad delivery boy bahut badtameej tha",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-7fa1ab64-2097-495d-9c56-d0b64493f152",
+          "quote": "delivery man did not return 30 rupees",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-f608c6d9-ff04-4402-b031-44565206613b",
+          "quote": "delivery agent is not good behave badly",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-2d1b5d22-74b7-462b-9342-f943cee06b4d",
+          "quote": "late delivery",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-d03ca827-c216-4700-bf13-b19aea38c91e",
+          "quote": "late delivery lot of time taking",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-713d9a31-1411-43fd-b951-8d7e06dd1120",
+          "quote": "I already paid for my order but I never received it",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-ec764e19-b717-4aee-824f-38e496758a37",
+          "quote": "I was accidentally charged twice for a single order",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-9fe2b028-2bab-4942-bd22-1e14a7b95724",
+          "quote": "deliveries are very late",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-5ed1d401-3a6f-4ae9-9c1f-e6d2675f0187",
+          "quote": "very late delivery",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-76112fd8-01a3-486d-8b08-8f33cfdc29da",
+          "quote": "I order Verka dahi and rosemary but order is seprate",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-50d50f90-329b-4a80-ba29-db4c782b7b35",
+          "quote": "Blinkit denied to return the product because there is no such type of policy on purcha8the highly costly products",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-80d50bc7-70c1-4fd1-a2a8-a932f2fef4c8",
+          "quote": "not refunded the money... very bad experience... be careful while buying milk",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        }
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Supported by only 1 source type (needs triangulation)."
+    },
+    {
+      "theme_name": "Product Quality and Refund Issues",
+      "description": "Customers are experiencing problems with product quality, including damaged or expired products, and difficulties with refunds.",
+      "barrier": "other_emergent",
+      "evidence": [
+        {
+          "item_id": "play-a5bed6bd-3791-4866-8337-16e3ce0efb99",
+          "quote": "The free storage container included with my order arrived broken",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-37be6424-5630-456f-a834-66f5e7256315",
+          "quote": "But I won't give it a 4 star review cause it's not available in my area",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-c3fb7296-6b57-458b-af69-08c5309b4a41",
+          "quote": "I am not able to open my need help section and complain about the rotten, expired or damaged products",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-2cfd62ba-0f18-427c-98e8-2bbc68b1291e",
+          "quote": "Packaging is never proper",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-98ab4fbf-eada-4e08-b673-2a6374f5c099",
+          "quote": "worst service staff is very poor",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-29976859-6ca7-4d74-a26d-35a61181b9f4",
+          "quote": "very slow slow delivery",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-1ed0d471-ac28-4975-b04a-7c9400be57e3",
+          "quote": "very worst service ever",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-f6fd546e-72db-4598-952d-c18b1328da1f",
+          "quote": "fresh items were not fresh at all",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-061915f8-c319-47f6-b261-e48118f2f73f",
+          "quote": "worst app ever",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-3bca2721-c4bb-4cdb-b631-51ee6ace0e67",
+          "quote": "refund policy is not good",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-fa312515-7b48-4128-a276-48e248941bb1",
+          "quote": "very bad costumer support and return policy",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-86030eb9-df37-43d7-b4ea-50e631842263",
+          "quote": "getting refund is like the war",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-774cb769-0843-48a8-89ee-556c5807fcea",
+          "quote": "there is no refund and refund policy",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-2e434d45-1c26-4259-8282-93eb4cb37a74",
+          "quote": "aap kuch galat order kr do accidentally toh return ka opt he nahi hai",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-4d890ae7-3b61-47e9-9280-ddfc5f699ba5",
+          "quote": "mare sath fraud Kiya hai",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-d3a2a06f-76fe-42cb-bd31-840e23cb3ed1",
+          "quote": "very bed app customer support bed many time damage podak",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-7e3729ae-3dab-45d0-896f-f92a70eda42d",
+          "quote": "not satisfied with delivery",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-222218b2-ddcf-4949-a50b-7042d32904ab",
+          "quote": "poor service",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-d0b4f7aa-9412-4314-9355-1c8fed85fd61",
+          "quote": "poor service, poor quality of products",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-9a4f9035-1b0b-4f33-902d-29d1585a2c6f",
+          "quote": "late order received",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-5881e44c-13d5-4c82-aaac-ed1bdaea3fab",
+          "quote": "over expensive for no reason at all",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-9aecfa90-05aa-40c7-aacc-e20f2e741dae",
+          "quote": "the worst delivery app",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-3750dcd3-2425-45d6-adb2-95dd6aa7ec67",
+          "quote": "Worst app",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-81832209-9f36-43ea-a1b4-9be8eaf50e1e",
+          "quote": "delivery service is not best",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-30ce2dbc-0a06-4584-b5a5-3e6937d9796a",
+          "quote": "order never reaches on time",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        }
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Supported by only 1 source type (needs triangulation)."
+    },
+    {
+      "theme_name": "App and Payment Issues",
+      "description": "Customers are experiencing problems with the app, including difficulties with ordering, payment, and refunds.",
+      "barrier": "other_emergent",
+      "evidence": [
+        {
+          "item_id": "play-c331c5f7-f8c5-4987-a3bc-88c07e21b7ec",
+          "quote": "blinkit is not allowing me any payment option to place order",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-3dd4d153-9c4a-47cf-ac03-778c24f36633",
+          "quote": "All Services Good but Delivery Partner Live Location Update second to second",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-d67da5a0-96d1-4067-b169-53ee09445517",
+          "quote": "aap har order par cash on delivery kardo",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-aeab123c-5ba9-401c-9be2-584ba67abd08",
+          "quote": "they cheated me of Rs 3672. fraud company",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        }
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Supported by only 1 source type (needs triangulation)."
+    },
+    {
+      "theme_name": "High Delivery Charges",
+      "description": "Customers feel that the delivery charges are too high and excessive, which is a major concern for them.",
+      "barrier": "price_perception",
+      "evidence": [
+        {
+          "item_id": "play-3a70422a-bfe2-4e3c-a073-864d96f59dff",
+          "quote": "delivery charges are highest",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-8be08994-7bea-4b37-93fb-77df7daa7783",
+          "quote": "you can't charge Rs 45 for delivery charge",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-90ea9b5d-a382-4f4d-9ce6-4f60745e2319",
+          "quote": "i takes 25 ruppes on delivery charges",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-90e49186-30e1-4f35-8e36-65848eaa2179",
+          "quote": "taking delivery charges a lot",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-928bda4d-315f-479e-b476-4eddfc1031a0",
+          "quote": "delivery charges more",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-b183c391-5867-4fb8-bbd6-d7db88f31d13",
+          "quote": "delivery charge can sometimes be high",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-20b0fbe1-744e-4d1c-b359-768533c714e2",
+          "quote": "the delivery charges are a little costly",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-0fa5be15-5f27-4238-a4a4-f81ae9d2eec4",
+          "quote": "too much delivery charges",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-79916953-7a45-4ce5-b3fc-c08efdc9f485",
+          "quote": "the delivery charge should be applied regarding the distance",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-5a5f8ea5-f4fc-4b67-ae24-bcba5b33760d",
+          "quote": "delivery charges are so high",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-e738333d-9b7a-49ac-bbf4-bb1c2a1eabce",
+          "quote": "yah bahut jyada delivery charge handling charge leta hai",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-76ef4d0a-b2e8-423e-a508-4573d58fa5aa",
+          "quote": "extra charges apply",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        }
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Supported by only 1 source type (needs triangulation)."
+    },
+    {
+      "theme_name": "High Product Prices",
+      "description": "Customers feel that the product prices are too high and not competitive, which is a major concern for them.",
+      "barrier": "price_perception",
+      "evidence": [
+        {
+          "item_id": "play-22bd32fc-c058-4e62-b412-b036d506fe31",
+          "quote": "Prices are a little bit higher",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-1e8b3530-f6f1-467c-88f8-bfa2ac4fd245",
+          "quote": "products pricess are very high",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-e65aa4f0-df2a-44b5-8a0b-7e51731c34a8",
+          "quote": "some items can be slightly more expensive than local stores, and occasionally products may be out of stock",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-5881e44c-13d5-4c82-aaac-ed1bdaea3fab",
+          "quote": "over expensive for no reason at all",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        }
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Supported by only 1 source type (needs triangulation)."
+    },
+    {
+      "theme_name": "Hidden Charges and Fees",
+      "description": "Customers are concerned about the hidden charges and fees, such as surge charges, handling charges, and delivery charges, which they feel are unfair and excessive.",
+      "barrier": "price_perception",
+      "evidence": [
+        {
+          "item_id": "app-14332419198",
+          "quote": "Stating free delivery above 199 but making some other reason like surge charge etc and making sure to take the money from customer",
+          "url": "https://apps.apple.com/in/app/blinkit/id960335206",
+          "source": "app_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "app-14332813696",
+          "quote": "They added surcharge 100 plus delivery 30 plus handling 12 for milk costing 24 rupees",
+          "url": "https://apps.apple.com/in/app/blinkit/id960335206",
+          "source": "app_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-dc84be81-d065-4f89-a64d-8d2ddee66529",
+          "quote": "handling charges for what, also I see too many times fresh vegetables or fruits aren't delivered and are priced very premium",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        }
+      ],
+      "is_weak_signal": false,
+      "weak_signal_reason": null
+    },
+    {
+      "theme_name": "Lack of Offers and Discounts",
+      "description": "Customers feel that there are not enough offers and discounts available, which is a major concern for them.",
+      "barrier": "price_perception",
+      "evidence": [
+        {
+          "item_id": "play-0deb577b-3c5a-420f-9718-72affda33556",
+          "quote": "I rarely receive good offers or discount coupons",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-1d9713c2-401f-40f4-8000-bab9c3c66adc",
+          "quote": "Fewer offers compared to Instamart and Big Basket",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        }
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Less than 3 evidence items."
+    },
+    {
+      "theme_name": "Delivery Charge Thresholds",
+      "description": "Customers are concerned about the minimum order value required for free delivery, which they feel is too high.",
+      "barrier": "price_perception",
+      "evidence": [
+        {
+          "item_id": "play-67a79334-a748-4a9f-9d23-d7f500e75e37",
+          "quote": "they take minimum ₹200 item for free delivery",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        }
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Less than 3 evidence items."
+    },
+    {
+      "theme_name": "Insufficient Options",
+      "description": "Users feel that the platform lacks variety in its product offerings, with some items being out of stock or not available at all.",
+      "barrier": "assortment_gap",
+      "evidence": [
+        {
+          "item_id": "play-7dcda6e0-789c-4607-9406-1ade7698249f",
+          "quote": "They need to provide more options and keep more stock of essential items",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-bff61b96-417d-4959-bdc9-da5d3b87abb4",
+          "quote": "option variety ki kami hai",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-9d83e0be-1fd3-4dd0-bce0-d84b40573ed2",
+          "quote": "no white monster available at the store from a longggg time",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        }
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Supported by only 1 source type (needs triangulation)."
+    },
+    {
+      "theme_name": "Stock Management Issues",
+      "description": "Users experience difficulties due to the platform's inability to maintain adequate stock levels, leading to out-of-stock situations.",
+      "barrier": "assortment_gap",
+      "evidence": [
+        {
+          "item_id": "play-e65aa4f0-df2a-44b5-8a0b-7e51731c34a8",
+          "quote": "some items can be slightly more expensive than local stores, and occasionally products may be out of stock",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        },
+        {
+          "item_id": "play-f71c1fe1-07d6-4fd0-80f5-9e84cad818b6",
+          "quote": "they need to maintain stocks",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        }
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Less than 3 evidence items."
+    },
+    {
+      "theme_name": "Missing Product Details",
+      "description": "Lack of specific product information, such as expiry dates.",
+      "barrier": "missing_information",
+      "evidence": [
+        {
+          "item_id": "play-2b68a5e0-5361-46ec-b8a7-034d7b411f9f",
+          "quote": "the expiry date was misplaced",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        }
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Less than 3 evidence items."
+    },
+    {
+      "theme_name": "Insufficient Payment Options",
+      "description": "Inability to view or select certain payment methods, like cash on delivery.",
+      "barrier": "missing_information",
+      "evidence": [
+        {
+          "item_id": "play-a6b194c2-e1e1-479b-85e9-b1e36185413c",
+          "quote": "it was not showing cash on delivery option",
+          "url": "https://play.google.com/store/apps/details?id=com.grofers.customerapp",
+          "source": "play_store",
+          "burst_flag": false
+        }
+      ],
+      "is_weak_signal": true,
+      "weak_signal_reason": "Less than 3 evidence items."
+    }
+  ]
+}

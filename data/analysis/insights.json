@@ -1,0 +1,130 @@
+{
+  "insights": [
+    {
+      "research_question_id": "Q1",
+      "insight_title": "Users Repeat Purchase Due to Familiarity",
+      "synthesis_narrative": "There is no direct evidence in the provided themes that explains why users repeatedly buy from the same categories. However, it can be inferred that users may stick to familiar categories due to trust and quality issues with new or unexplored categories. The themes highlight various trust and quality concerns, such as damaged or poor-quality products, incorrect or missing items, and expired or spoiled products, which might discourage users from exploring new categories.",
+      "scorecards": [
+        {
+          "hypothesis_id": "H1_habit_loop",
+          "evidence_strength": "weak",
+          "finding_summary": "No direct evidence supports the habit loop hypothesis as the primary reason for repeated purchases from the same categories.",
+          "supporting_theme_names": []
+        }
+      ]
+    },
+    {
+      "research_question_id": "Q2",
+      "insight_title": "Exploration Barriers",
+      "synthesis_narrative": "The themes suggest that trust and quality concerns are significant barriers to exploring new categories. Users express dissatisfaction with the quality of products and services, which might prevent them from trying new categories. Additionally, the lack of information about products, such as expiry dates, could also hinder exploration.",
+      "scorecards": [
+        {
+          "hypothesis_id": "H2_low_awareness",
+          "evidence_strength": "weak",
+          "finding_summary": "There is limited evidence to suggest that low awareness of available categories is a significant barrier to exploration.",
+          "supporting_theme_names": [
+            "Missing Product Details"
+          ]
+        },
+        {
+          "hypothesis_id": "H3_trust_quality",
+          "evidence_strength": "strong",
+          "finding_summary": "Trust and quality concerns are significant barriers to exploring new categories.",
+          "supporting_theme_names": [
+            "Damaged or Poor-Quality Products",
+            "Incorrect or Missing Items",
+            "Expired or Spoiled Products"
+          ]
+        }
+      ]
+    },
+    {
+      "research_question_id": "Q3",
+      "insight_title": "Product Discovery",
+      "synthesis_narrative": "The provided themes do not offer clear insights into how users discover products today. However, it can be inferred that users might rely on the app's interface and product listings to discover new products.",
+      "scorecards": [
+        {
+          "hypothesis_id": "H4_discovery_friction",
+          "evidence_strength": "weak",
+          "finding_summary": "There is no direct evidence to support the hypothesis that discovery friction is a significant issue in product discovery.",
+          "supporting_theme_names": []
+        }
+      ]
+    },
+    {
+      "research_question_id": "Q4",
+      "insight_title": "Habits in Shopping Behavior",
+      "synthesis_narrative": "The themes do not provide direct evidence on the role of habits in shopping behavior. However, it can be inferred that users may develop habits based on their experiences with the app and the quality of products and services.",
+      "scorecards": [
+        {
+          "hypothesis_id": "H1_habit_loop",
+          "evidence_strength": "weak",
+          "finding_summary": "No direct evidence supports the habit loop hypothesis as a significant factor in shopping behavior.",
+          "supporting_theme_names": []
+        }
+      ]
+    },
+    {
+      "research_question_id": "Q5",
+      "insight_title": "Information Needed for New Categories",
+      "synthesis_narrative": "Users need more information about products, such as expiry dates, to feel comfortable trying new categories. The lack of such information can be a barrier to exploration.",
+      "scorecards": [
+        {
+          "hypothesis_id": "H5_missing_information",
+          "evidence_strength": "moderate",
+          "finding_summary": "The lack of specific product information, such as expiry dates, is a concern for users.",
+          "supporting_theme_names": [
+            "Missing Product Details"
+          ]
+        }
+      ]
+    },
+    {
+      "research_question_id": "Q6",
+      "insight_title": "Frustrations in the Shopping Experience",
+      "synthesis_narrative": "Users experience frustrations with the shopping experience, including poor product quality, incorrect or missing items, and difficulties with customer support. These frustrations can lead to a lack of trust in the service and discourage users from exploring new categories.",
+      "scorecards": [
+        {
+          "hypothesis_id": "H3_trust_quality",
+          "evidence_strength": "strong",
+          "finding_summary": "Trust and quality concerns are significant frustrations in the shopping experience.",
+          "supporting_theme_names": [
+            "Damaged or Poor-Quality Products",
+            "Incorrect or Missing Items",
+            "Expired or Spoiled Products"
+          ]
+        }
+      ]
+    },
+    {
+      "research_question_id": "Q7",
+      "insight_title": "User Segments More Likely to Experiment",
+      "synthesis_narrative": "The provided themes do not offer clear insights into which user segments are more likely to experiment with new categories. However, it can be inferred that users who are less risk-averse and more open to new experiences might be more likely to explore new categories.",
+      "scorecards": [
+        {
+          "hypothesis_id": "emergent",
+          "evidence_strength": "weak",
+          "finding_summary": "No direct evidence supports the identification of specific user segments more likely to experiment with new categories.",
+          "supporting_theme_names": []
+        }
+      ]
+    },
+    {
+      "research_question_id": "Q8",
+      "insight_title": "Unmet Needs in the Shopping Experience",
+      "synthesis_narrative": "Users have unmet needs in the shopping experience, including the need for better product quality, more accurate product information, and improved customer support. These unmet needs can lead to frustrations and a lack of trust in the service.",
+      "scorecards": [
+        {
+          "hypothesis_id": "H3_trust_quality",
+          "evidence_strength": "strong",
+          "finding_summary": "Trust and quality concerns are significant unmet needs in the shopping experience.",
+          "supporting_theme_names": [
+            "Damaged or Poor-Quality Products",
+            "Incorrect or Missing Items",
+            "Expired or Spoiled Products"
+          ]
+        }
+      ]
+    }
+  ]
+}
